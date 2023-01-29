@@ -1,0 +1,131 @@
+﻿@model CategoryCreateViewModel
+<div class="content">
+    <div class="panel-header bg-white shadow-sm">
+        <div class="page-inner  py-3 mb-5">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                <div class="">
+                    <div class="header d-sm-flex align-items-center  text-center">
+                        <h1 class="page-header banner-title">Category</h1>
+                        <ul class="breadcrumb justify-content-sm-start justify-content-center">
+                            <li><a asp-controller="dashboard" asp-action="index"><i class="icon-home"></i></a></li>
+                            <li><a href="#">Category</a></li>
+                            <li><a href="#">Create Category</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+
+                    <div class="card-body">
+                        <form class="main-form full method="post" asp-action="create" enctype="multipart/form-data">
+                            <div class="card-header">
+                                <div class="card-head-row justify-content-between">
+                                    <div class="card-title"><i class="fas fa-pen"></i> Create Category</div>
+                                    <div class="add-btn text">
+                                        <button type="submit" class="btn btn-primary" data-toggle="tooltip" title="" data-original-title="Save"><i class="fas fa-save"></i></button>
+                                        <a class="btn btn-primary" href="#" data-toggle="tooltip" title="" data-original-title="Cancel"><i class="fas fa-times"></i></a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="col-12">
+                                    <div class="input-box form-group required">
+                                        <div class="row">
+                                            <label asp-for="Name" class="col-md-3 control-label">Category Name</label>
+                                            <div class="col-md-9">
+                                                <input asp-for="Name" class="form-control" required placeholder="Category Name">
+                                                <span asp-validation-for="Name" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="form-group input-box">
+                                        <div class="row">
+                                            <label asp-for="IsMain" class="col-md-3 control-label">Is Main Category?</label>
+                                            <div class="col-md-9">
+                                                <label asp-for="IsMain" class="form-check-label control-label">
+                                                    <input asp-for="IsMain" id="isMain"  style="margin-top:6px; width:25px">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div id="iconDiv" class="input-box form-group d-none" >
+                                        <div class="row">
+                                            <label asp-for="Icon" class="col-md-3 control-label">Category Icon</label>
+                                            <div class="col-md-9">
+                                                <input asp-for="Icon" class="form-control" placeholder="Category Icon">
+                                                <span asp-validation-for="Icon" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12" id="parentDiv">
+                                    <div class="input-box form-group">
+                                        <div class="row">
+                                            <label asp-for="ParentId" class="col-md-3 control-label">Parent Categories</label>
+                                            <div class="col-md-9">
+                                                <select asp-for="ParentId" asp-items="Model.ParentCategories" class="form-control"></select>
+                                                <span asp-validation-for="ParentId" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12">
+                                    <div class="input-box form-group">
+                                        <div class="row">
+                                            <label asp-for="IsStatus" class="col-md-3 control-label">Status</label>
+                                            <div class="col-md-9">
+                                                <select asp-for="IsStatus" class="form-control">
+                                                    <option value="true" selected="selected">Enabled</option>
+                                                    <option value="false">Disabled</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts
+{
+    <script>
+        $('#isMain').change(function () {
+            if($(this).is(":checked")){               
+                $("#parentDiv").addClass("d-none");
+                $("#iconDiv").removeClass("d-none");
+                
+            }
+            else{             
+                $("#parentDiv").removeClass("d-none");
+                $("#iconDiv").addClass("d-none");
+            }
+        });
+    </script>
+}
+
+

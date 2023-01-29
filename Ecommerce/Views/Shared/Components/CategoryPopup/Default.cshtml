@@ -1,0 +1,33 @@
+﻿@model List<Category>
+<div class="modal-body pl-4">
+    <div style="height: 100%;" data-simplebar data-simplebar-auto-hide="false">
+        <div class="popup-detail">
+            <ul class="cate-inner">
+                @foreach (var item in Model)
+                {
+                    <li class="level sub-megamenu">
+                        <span class="opener plus"></span>
+                        <a href="shop.html" class="page-scroll"><i class="fa fa-female"></i>@item.Name (@item.Children.Count)</a>
+                        <div class="megamenu  mega-sub-menu">
+                            <div class="megamenu-inner-top">
+                                <ul class="sub-menu-level1">
+                                    <li class="level2">
+                                        <ul class="sub-menu-level2 ">
+                                            @foreach (var sub in item.Children)
+                                            {
+                                                <li class="level3"><a href="shop.html"><span>■</span>@sub.Name</a></li>
+                                            }
+                                           
+                                           
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                }
+                             
+            </ul>
+        </div>
+    </div>
+</div>

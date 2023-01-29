@@ -1,0 +1,169 @@
+﻿@model List<Category>
+@section Style{
+    <link rel="stylesheet" href="~/admin/css/custom.css">
+}
+<div class="content">
+    <div class="panel-header bg-white shadow-sm">
+        <div class="page-inner  py-3 mb-5">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                <div class="">
+                    <div class="header d-sm-flex align-items-center  text-center">
+                        <h1 class="page-header banner-title">Blogs</h1>
+                        <ul class="breadcrumb justify-content-sm-start justify-content-center">
+                            <li><a href="../index-2.html"><i class="icon-home"></i></a></li>
+                            <li><a href="#">Categories</a></li>
+                            <li><a href="#">Categories List</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-head-row justify-content-between">
+                            <div class="card-title"><i class="fas fa-list"></i> Categories List</div>
+                            <div class="add-btn">
+                                <a class="btn btn-primary" asp-controller="category" asp-action="create" data-toggle="tooltip" title="" data-original-title="Add Category">
+                                    <i class="fas fa-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="multi-filter-select" class="display table table-hover">
+
+                                <thead>
+                                    <tr>
+                                        @if (Model.Count > 0)
+                                        {
+                                            <th>Icon</th>
+                                            <th>Category Name</th>
+                                            <th>SubCategories</th>                                            
+                                            <th>Status</th>
+                                            <th class="text-right">Action</th>
+                                        }
+                                        else
+                                        {
+                                            <th>Categories are Empty</th>
+                                        }
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var category in Model)
+                                    {
+                                        <tr>
+
+                                            <td>
+                                                <img src="~/images/icon/@category.Icon" alt="icon" class="img-fluid img-thumbnail">
+                                            </td>
+                                            
+                                            <td>@category.Name</td>
+                                            @if (category.Children.Count == 0)
+                                            {
+                                                <td><span class="badge badge-danger text-light">Null SubCategory</span></td>
+                                            }
+                                            else
+                                            {
+                                                <td>                                                  
+                                                    @foreach (var subcat in category.Children)
+                                                {            
+                                                    
+                                                           <span class="d-block">@subcat.Name</span>
+                                                }
+                                                </td>
+                                            }
+                                           
+                                           
+                                            @if (category.IsStatus)
+                                            {
+                                                <td><span class="badge badge-success font-weight-bold">Active</span></td>
+                                            }
+                                            else
+                                            {
+                                                <td><span class="badge badge-danger text-light">Deactive</span></td>
+                                            }
+                                            <td class="text-right">
+                                                <a class="btn btn-primary" asp-action="update" asp-route-id="@category.Id" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pen"></i></a>
+                                                <div style="display:inline-block">
+                                                    <form class="forms-sample" method="post" asp-action="Delete" asp-route-id="@category.Id">
+                                                        <button type="submit" class="btn btn-primary" data-toggle="tooltip" title="" data-original-title="Delete"><i class="fas fa-times"></i></button>
+
+                                                    </form>
+                                                </div>
+                                            </td>
+
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        let btns = document.querySelectorAll(".forms-sample")
+        btns.forEach(btn =>
+            btn.addEventListener("submit", function (event) {
+                event.preventDefault();
+                swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover this imaginary file!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            btn.submit(),
+                                swal("Poof! Your imaginary file has been deleted!", {
+                                    icon: "success",
+                                });
+                        }
+                        else {
+                            swal("Your imaginary file is safe!");
+                        }
+                    });
+            }));
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#multi-filter-select').DataTable({
+                "pageLength": 6,
+                initComplete: function () {
+                    this.api().columns().every(function () {
+                        var column = this;
+                        var select = $('<select class="form-control"><option value="">All</option></select>')
+                            .appendTo($(column.footer()).empty())
+                            .on('change', function () {
+                                var val = $.fn.dataTable.util.escapeRegex(
+                                    $(this).val()
+                                );
+
+                                column
+                                    .search(val ? '^' + val + '$' : '', true, false)
+                                    .draw();
+                            });
+
+                        column.data().unique().sort().each(function (d, j) {
+                            select.append('<option value="' + d + '">' + d + '</option>')
+                        });
+                    });
+                }
+            });
+        });
+    </script>
+}
+

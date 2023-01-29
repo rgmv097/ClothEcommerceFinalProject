@@ -1,0 +1,14 @@
+C:\Users\rcing\OneDrive\İş masası\EcommerceFinalProject\Ecommerce.Core\bin\Debug\net6.0\Ecommerce.Core.deps.json
+C:\Users\rcing\OneDrive\İş masası\EcommerceFinalProject\Ecommerce.Core\bin\Debug\net6.0\Ecommerce.Core.runtimeconfig.json
+C:\Users\rcing\OneDrive\İş masası\EcommerceFinalProject\Ecommerce.Core\bin\Debug\net6.0\Ecommerce.Core.dll
+C:\Users\rcing\OneDrive\İş masası\EcommerceFinalProject\Ecommerce.Core\bin\Debug\net6.0\Ecommerce.Core.pdb
+C:\Users\rcing\OneDrive\İş masası\EcommerceFinalProject\Ecommerce.Core\obj\Debug\net6.0\Ecommerce.Core.csproj.AssemblyReference.cache
+C:\Users\rcing\OneDrive\İş masası\EcommerceFinalProject\Ecommerce.Core\obj\Debug\net6.0\Ecommerce.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rcing\OneDrive\İş masası\EcommerceFinalProject\Ecommerce.Core\obj\Debug\net6.0\Ecommerce.Core.AssemblyInfoInputs.cache
+C:\Users\rcing\OneDrive\İş masası\EcommerceFinalProject\Ecommerce.Core\obj\Debug\net6.0\Ecommerce.Core.AssemblyInfo.cs
+C:\Users\rcing\OneDrive\İş masası\EcommerceFinalProject\Ecommerce.Core\obj\Debug\net6.0\Ecommerce.Core.csproj.CoreCompileInputs.cache
+C:\Users\rcing\OneDrive\İş masası\EcommerceFinalProject\Ecommerce.Core\obj\Debug\net6.0\Ecommerce.Core.dll
+C:\Users\rcing\OneDrive\İş masası\EcommerceFinalProject\Ecommerce.Core\obj\Debug\net6.0\refint\Ecommerce.Core.dll
+C:\Users\rcing\OneDrive\İş masası\EcommerceFinalProject\Ecommerce.Core\obj\Debug\net6.0\Ecommerce.Core.pdb
+C:\Users\rcing\OneDrive\İş masası\EcommerceFinalProject\Ecommerce.Core\obj\Debug\net6.0\Ecommerce.Core.genruntimeconfig.cache
+C:\Users\rcing\OneDrive\İş masası\EcommerceFinalProject\Ecommerce.Core\obj\Debug\net6.0\ref\Ecommerce.Core.dll

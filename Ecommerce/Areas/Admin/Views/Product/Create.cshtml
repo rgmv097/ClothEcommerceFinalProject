@@ -1,0 +1,331 @@
+﻿@model ProductCreateViewModel
+<div class="content">
+    <div class="panel-header bg-white shadow-sm">
+        <div class="page-inner  py-3 mb-5">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                <div class="">
+                    <div class="header d-sm-flex align-items-center  text-center">
+                        <h1 class="page-header banner-title">Category</h1>
+                        <ul class="breadcrumb justify-content-sm-start justify-content-center">
+                            <li><a asp-controller="dashboard" asp-action="index"><i class="icon-home"></i></a></li>
+                            <li><a href="#">Product</a></li>
+                            <li><a href="#">Create Product</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+
+                    <iv class="card-body">
+                        <form class="main-form full" method="post" asp-action="Create" enctype="multipart/form-data">
+                            <div class="card-header">
+                                <div class="card-head-row justify-content-between">
+                                    <div class="card-title"><i class="fas fa-pen"></i> Create Product</div>
+                                    <div class="add-btn text">
+                                        <button type="submit" class="btn btn-primary" data-toggle="tooltip" title="" data-original-title="Save"><i class="fas fa-save"></i></button>
+                                        <a class="btn btn-primary" href="#" data-toggle="tooltip" title="" data-original-title="Cancel"><i class="fas fa-times"></i></a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div asp-validation-summary="All" class="text-danger"></div>
+
+                                <div class="col-12">
+                                    <div class="input-box form-group">
+                                        <div class="row">
+                                            <label asp-for="Name" class="col-md-3">Product Name</label>
+                                            <div class="col-md-9">
+                                                <input asp-for="Name" class="form-control" placeholder="Product Name">
+                                                <span asp-validation-for="Name" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="input-box form-group">
+                                        <div class="row">
+                                            <label asp-for="DescriptionTitle" class="col-md-3">Description Title</label>
+                                            <div class="col-md-9">
+                                                <textarea asp-for="DescriptionTitle" class="form-control" placeholder="Description Title"></textarea>
+                                                <span asp-validation-for="DescriptionTitle" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="input-box form-group ">
+                                        <div class="row">
+                                            <label asp-for="Description" class="col-md-3">Description</label>
+                                            <div class="col-md-9">
+                                                <textarea asp-for="Description" class="form-control" placeholder="Description"></textarea>
+                                                <span asp-validation-for="Description" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="input-box form-group ">
+                                        <div class="row">
+                                            <label asp-for="LongDescription" class="col-md-3">Long Description</label>
+                                            <div class="col-md-9">
+                                                <input asp-for="LongDescription" class="form-control" placeholder="Long Description">
+                                                <span asp-validation-for="LongDescription" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12" id="parentDiv">
+                                    <div class="input-box form-group">
+                                        <div class="row">
+                                            <label asp-for="ParentCategoryId" class="col-md-3">Parent Categories</label>
+                                            <div class="col-md-9">
+                                                <select asp-for="ParentCategoryId" asp-items="Model.ParentCategories" id="parentCategory" class="form-control"></select>
+                                                <span asp-validation-for="ParentCategoryId" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12" id="childDiv">
+                                    <div class="input-box form-group">
+                                        <div class="row">
+                                            <label asp-for="ChildCategoryId" class="col-md-3">Sub Categories</label>
+                                            <div class="col-md-9">
+
+                                                <select asp-for="ChildCategoryId" asp-items="Model.ChildCategories" id="childCategory" class="form-control"></select>
+                                                <span asp-validation-for="ChildCategoryId" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="input-box form-group ">
+                                        <div class="row">
+                                            <label asp-for="Price" class="col-md-3">Price</label>
+                                            <div class="col-md-9">
+                                                <input asp-for="Price" class="form-control" placeholder="Price">
+                                                <span asp-validation-for="Price" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="input-box form-group ">
+                                        <div class="row">
+                                            <label asp-for="DiscountPrice" class="col-md-3">Discount Price</label>
+                                            <div class="col-md-9">
+                                                <input asp-for="DiscountPrice" class="form-control" placeholder="Discount Price">
+                                                <span asp-validation-for="DiscountPrice" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="input-box form-group ">
+                                        <div class="row">
+                                            <label asp-for="Sku" class="col-md-3">Product SKU</label>
+                                            <div class="col-md-3">
+                                                <input asp-for="Sku" class="form-control" placeholder="Product SKU">
+                                                <span asp-validation-for="Sku" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <button type="button" class="btn btn-outline-success font-weight-bold" id="btn">Click For Product Code</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="input-box form-group">
+                                        <div class="row">
+                                            <label asp-for="Images" class="col-md-3">Product Images</label>
+                                            <div class="col-md-9">
+                                                <input asp-for="Images" class="form-control form-choose" accept="image/*">
+                                                <span asp-validation-for="ProductImages" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="input-box form-group ">
+                                        <div class="row justify-content-center align-items-center product-options my-3" data-index="0">
+                                            <div class="col-md-4">
+                                                <label class="control-label">Product Size</label>
+                                                <select name="ProductOptions[0].Size" class="form-control">
+                                                    <option selected disabled value="0">Please, select size</option>
+                                                    @foreach (ProductSizes productSize in Enum.GetValues(typeof(ProductSizes)))
+                                                    {
+                                                        <option value="@((int)productSize)">
+                                                            @productSize.ToString()
+                                                        </option>
+                                                    }
+                                                </select>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Product Color</label>
+                                                <select name="ProductOptions[0].Color" class="form-control">
+                                                    <option selected disabled value="0">Please, color size</option>
+                                                    @foreach (ProductColors productColor in Enum.GetValues(typeof(ProductColors)))
+                                                    {
+                                                        <option value="@((int)productColor)">
+                                                            @productColor.ToString()
+                                                        </option>
+                                                    }
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label>Product Count</label>
+                                                <input name="ProductOptions[0].Count" type="number" class="form-control" placeholder="Product Count">
+                                            </div>
+                                            <div class="col-md-2 mt-4 actionButtons">
+                                                <button type="button" class="btn btn-success btn-sm add-product-options mr-2">
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div id="product-options"></div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="input-box form-group ">
+                                        <div class="row">
+                                            <label asp-for="Availability" class="col-md-3">Stock Status</label>
+                                            <div class="col-md-9">
+                                                <select asp-for="Availability" class="form-control">
+                                                    <option value="1" selected="selected">IN Stock</option>
+                                                    <option value="2">Out OF Stock</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="input-box form-group">
+                                        <div class="row">
+                                            <label asp-for="IsStatus" class="col-md-3">Status</label>
+                                            <div class="col-md-9">
+                                                <select asp-for="IsStatus" class="form-control">
+                                                    <option value="true" selected="selected">Enabled</option>
+                                                    <option value="false">Disabled</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts
+    {
+    <script>
+        let productOptionIndex = $(".product-options").length;
+
+        $(document).on("click", ".add-product-options", function() {
+            const productOptionsClone = $(".product-options").first().clone();
+
+            $(`
+                <button type="button" class="btn btn-danger btn-sm remove-product-options">
+                    <i class="fas fa-trash"></i>
+                </button>
+             `).appendTo(productOptionsClone.find(".actionButtons"))
+
+            productOptionsClone.find("input, select").each(function(index, productOptionField) {
+                $(productOptionField).val(0);
+                $(productOptionField).attr('name', function (idx, attrVal) {
+                    return attrVal.replace(`[0]`, `[${productOptionIndex}]`)
+                        })
+            });
+
+            productOptionsClone.appendTo("#product-options");
+            productOptionIndex++;
+        })
+
+        $(document).on("click", ".remove-product-options", function() {
+            $(this).parents('.product-options').remove();
+            productOptionIndex -= 1;
+        })
+
+
+        $('#isMain').change(function () {
+            if ($(this).is(":checked")) {
+                $("#parentDiv").addClass("d-none");
+                $("#iconDiv").removeClass("d-none");
+
+            }
+            else {
+                $("#parentDiv").removeClass("d-none");
+                $("#iconDiv").addClass("d-none");
+            }
+        });
+
+        var btn = document.getElementById("btn");
+        var input = document.getElementById("Sku");
+        var randomString = Math.random().toString(26).toUpperCase().slice(2, 12);
+        input.value = randomString;
+        btn.addEventListener("click", function () {
+            input.value = Math.random().toString(26).toUpperCase().slice(2, 12);
+        });
+        $(input).bind('input propertychange', function () {
+            input.value = Math.random().toString(26).toUpperCase().slice(2, 12);
+            ;
+        });
+
+        $(document).ready(function () {
+            $("#parentCategory").change(function () {
+                var parentCategoryId = $(this).val();
+                fetch("/Admin/Product/ChildCategories?parentCategoryId=" + parentCategory.value)
+                    .then(response => response.json())
+                    .then(childCategories => {
+                        var select = $("#childCategory");
+                        select.empty();
+                        console.log(childCategories)
+                        if (childCategories.length == 0) {
+                            $("#childDiv").addClass("d-none");
+                            return;
+                        }
+                        $("#childDiv").removeClass("d-none");
+                        childCategories.forEach(childCategory => {
+                            select.append($('<option/>', {
+                                value: childCategory.value,
+                                text: childCategory.text
+                            }));
+                        })
+                    });
+                function succesFunction(data) {
+                    var select = $("#childCategory");
+                    select.empty();
+                    $.each(data, function (index, itemData) {
+                        select.append($('<option/>', {
+                            value: itemData.value,
+                            text: itemData.text
+                        }));
+                    });
+                }
+                function errorFunction() {
+                    alert("error");
+                }
+            });
+        });
+    </script>
+}
+
+

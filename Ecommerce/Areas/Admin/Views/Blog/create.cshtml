@@ -1,0 +1,124 @@
+﻿@model BlogCreateViewModel
+@section Style{
+    <link rel="stylesheet" href="~/admin/css/summernote.min.css">
+}
+<div class="content">
+    <div class="panel-header bg-white shadow-sm">
+        <div class="page-inner  py-3 mb-5">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                <div class="">
+                    <div class="header d-sm-flex align-items-center  text-center">
+                        <h1 class="page-header banner-title">Blog</h1>
+                        <ul class="breadcrumb justify-content-sm-start justify-content-center">
+                            <li><a asp-controller="dashboard" asp-action="index"><i class="icon-home"></i></a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Create Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+
+                    <div class="card-body">
+                        <form class="main-form full method="post" asp-action="create" enctype="multipart/form-data">
+                            <div class="card-header">
+                                <div class="card-head-row justify-content-between">
+                                    <div class="card-title"><i class="fas fa-pen"></i> Create Blog</div>
+                                    <div class="add-btn text">
+                                        <button type="submit" class="btn btn-primary" data-toggle="tooltip" title="" data-original-title="Save"><i class="fas fa-save"></i></button>
+                                        <a class="btn btn-primary" href="#" data-toggle="tooltip" title="" data-original-title="Cancel"><i class="fas fa-times"></i></a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div asp-validation-summary="All" class="text-danger"></div>
+                                <div class="col-12">
+                                    <div class="input-box form-group required">
+                                        <div class="row">
+                                            <label asp-for="Title" class="col-md-3 control-label">Blog Tittle</label>
+                                            <div class="col-md-9">
+                                                <input asp-for="Title" class="form-control" required placeholder="Blog Tittle">
+                                                <span asp-validation-for="Title" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="input-box form-group">
+                                        <div class="row">
+                                            <label asp-for="Description" class="col-md-3 control-label">Description</label>
+                                            <div class="col-md-9">
+                                                <textarea asp-for="Description" id="summernote"  class="form-control" placeholder="Description" rows="10" cols="30"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="input-box form-group">
+                                        <div class="row">
+                                            <label asp-for="Author" class="col-md-3 control-label">Author</label>
+                                            <div class="col-md-9">
+                                                <input asp-for="Author" class="form-control" required placeholder="Author">
+                                                <span asp-validation-for="Author" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="input-box form-group required">
+                                        <div class="row">
+                                            <label asp-for="Image" class="col-md-3 control-label">Blog Image</label>
+                                            <div class="col-md-9">
+                                                <input asp-for="Image" class="form-control" required accept="image/*">
+                                                <span asp-validation-for="Image" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="input-box form-group">
+                                        <div class="row">
+                                            <label asp-for="IsStatus" class="col-md-3 control-label">Status</label>
+                                            <div class="col-md-9">
+                                                <select asp-for="IsStatus" class="form-control">
+                                                    <option value="true" selected="selected">Enabled</option>
+                                                    <option value="false">Disabled</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/admin/js/plugin/summernote/summernote.min.js"></script>
+  
+    <script>
+        $('#summernote').summernote({
+            placeholder: 'Description',
+            tabsize: 2,
+            height: 250
+        });
+    </script>
+   
+	}
+
+

@@ -1,0 +1,160 @@
+﻿@model List<Slider>
+@section Style{
+    <link rel="stylesheet" href="~/admin/css/custom.css">
+}
+<div class="content">
+    <div class="panel-header bg-white shadow-sm">
+        <div class="page-inner  py-3 mb-5">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                <div class="">
+                    <div class="header d-sm-flex align-items-center  text-center">
+                        <h1 class="page-header banner-title">Products</h1>
+                        <ul class="breadcrumb justify-content-sm-start justify-content-center">
+                            <li><a href="../index-2.html"><i class="icon-home"></i></a></li>
+                            <li><a href="#">Sliders</a></li>
+                            <li><a href="#">Sliders List</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-head-row justify-content-between">
+                            <div class="card-title"><i class="fas fa-list"></i> Sliders List</div>
+                            <div class="add-btn">
+                                <a class="btn btn-primary" asp-controller="slider" asp-action="create" data-toggle="tooltip" title="" data-original-title="Add Slider">
+                                    <i class="fas fa-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="multi-filter-select" class="display table table-hover">
+
+                                <thead>
+                                    <tr>
+                                        @if (Model.Count > 0)
+                                        {
+                                            <th>Image</th>
+                                            <th>Tittle</th>
+                                            <th>Slogan</th>
+                                            <th>Description</th>
+                                            <th>Status</th>
+                                            <th class="text-right">Action</th>
+                                        }
+                                        else
+                                        {
+                                            <th>Sliders are Empty</th>
+                                        }
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var slider in Model)
+                                    {
+                                        <tr>
+
+                                            <td>
+                                                <img src="~/images/slider/@slider.ImageUrl" alt="product" class="img-fluid img-thumbnail">
+                                            </td>
+                                            @{
+                                                string Title = (slider.Title.Length < 15) ? slider.Title : slider.Title.Substring(0, 15) + "...";
+                                                string Slogan = (slider.Slogan.Length < 15) ? slider.Slogan : slider.Slogan.Substring(0, 15) + "...";
+                                                
+
+                                            }
+                                            <td>@Title</td>
+                                            <td>@Slogan</td>
+                                            <td>@Html.Raw(slider.Description)</td>
+                                            @if (slider.IsStatus)
+                                            {
+                                                <td><span class="badge badge-success font-weight-bold">Active</span></td>
+                                            }
+                                            else
+                                            {
+                                                <td><span class="badge badge-danger text-light">Deactive</span></td>
+                                            }       
+                                            <td class="text-right">
+                                                <a class="btn btn-primary"asp-action="update" asp-route-id="@slider.Id" data-toggle="tooltip" title="" data-original-title="Edit"><i class="fas fa-pen"></i></a>
+                                                <div style="display:inline-block">
+                                                    <form class="forms-sample" method="post" asp-action="Delete" asp-route-id="@slider.Id">
+                                                        <button type="submit" class="btn btn-primary" data-toggle="tooltip" title="" data-original-title="Delete"><i class="fas fa-times"></i></button>
+
+                                                    </form>
+                                                </div>
+                                            </td>
+
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        let btns = document.querySelectorAll(".forms-sample")
+        btns.forEach(btn =>
+            btn.addEventListener("submit", function (event) {
+                event.preventDefault();
+                swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover this imaginary file!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            btn.submit(),
+                                swal("Poof! Your imaginary file has been deleted!", {
+                                    icon: "success",
+                                });
+                        }
+                        else {
+                            swal("Your imaginary file is safe!");
+                        }
+                    });
+            }));
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#multi-filter-select').DataTable({
+                "pageLength": 6,
+                initComplete: function () {
+                    this.api().columns().every(function () {
+                        var column = this;
+                        var select = $('<select class="form-control"><option value="">All</option></select>')
+                            .appendTo($(column.footer()).empty())
+                            .on('change', function () {
+                                var val = $.fn.dataTable.util.escapeRegex(
+                                    $(this).val()
+                                );
+
+                                column
+                                    .search(val ? '^' + val + '$' : '', true, false)
+                                    .draw();
+                            });
+
+                        column.data().unique().sort().each(function (d, j) {
+                            select.append('<option value="' + d + '">' + d + '</option>')
+                        });
+                    });
+                }
+            });
+        });
+    </script>
+}
