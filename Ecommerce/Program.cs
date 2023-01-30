@@ -37,6 +37,9 @@ namespace Ecommerce
             Constants.SliderPath = Path.Combine(Constants.RootPath, "images", "slider");
             Constants.BlogPath= Path.Combine(Constants.RootPath, "images", "blog");
             Constants.CategoryIconPath= Path.Combine(Constants.RootPath, "images", "icon");
+            Constants.ProductImages = Path.Combine(Constants.RootPath, "images", "product");
+
+
 
             var app = builder.Build();
 

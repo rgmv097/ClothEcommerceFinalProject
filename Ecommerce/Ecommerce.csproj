@@ -26,6 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\admin\js\plugin\bootstrap-notify\" />
+    <Folder Include="wwwroot\admin\js\plugin\jquery-scrollbar\" />
     <Folder Include="wwwroot\images\categoryicon\" />
     <Folder Include="wwwroot\images\slider\" />
   </ItemGroup>

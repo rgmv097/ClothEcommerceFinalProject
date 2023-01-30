@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\admin\\css\\fonts.min.css"
     },
     {
+      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\css\\summernote.min.css",
+      "PackagePath": "staticwebassets\\admin\\css\\summernote.min.css"
+    },
+    {
       "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\flaticon\\Flaticon.eot",
       "PackagePath": "staticwebassets\\admin\\fonts\\flaticon\\Flaticon.eot"
     },
@@ -59,42 +63,6 @@
     {
       "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\flaticon\\flaticon.html",
       "PackagePath": "staticwebassets\\admin\\fonts\\flaticon\\flaticon.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\flaticon\\index.html",
-      "PackagePath": "staticwebassets\\admin\\fonts\\flaticon\\index.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\flaticon\\index30b5.html",
-      "PackagePath": "staticwebassets\\admin\\fonts\\flaticon\\index30b5.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\flaticon\\index5851.html",
-      "PackagePath": "staticwebassets\\admin\\fonts\\flaticon\\index5851.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\flaticon\\index72c9.html",
-      "PackagePath": "staticwebassets\\admin\\fonts\\flaticon\\index72c9.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\flaticon\\indexad3f.html",
-      "PackagePath": "staticwebassets\\admin\\fonts\\flaticon\\indexad3f.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\flaticon\\indexb70a.html",
-      "PackagePath": "staticwebassets\\admin\\fonts\\flaticon\\indexb70a.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\flaticon\\indexbfec.html",
-      "PackagePath": "staticwebassets\\admin\\fonts\\flaticon\\indexbfec.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\flaticon\\indexc052.html",
-      "PackagePath": "staticwebassets\\admin\\fonts\\flaticon\\indexc052.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\flaticon\\indexf8a0.html",
-      "PackagePath": "staticwebassets\\admin\\fonts\\flaticon\\indexf8a0.html"
     },
     {
       "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\fontawesome\\fa-brands-400.eot",
@@ -169,42 +137,6 @@
       "PackagePath": "staticwebassets\\admin\\fonts\\fontawesome\\fa-solid-900d41d.eot"
     },
     {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\fontawesome\\index.html",
-      "PackagePath": "staticwebassets\\admin\\fonts\\fontawesome\\index.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\fontawesome\\index30b5.html",
-      "PackagePath": "staticwebassets\\admin\\fonts\\fontawesome\\index30b5.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\fontawesome\\index5851.html",
-      "PackagePath": "staticwebassets\\admin\\fonts\\fontawesome\\index5851.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\fontawesome\\index72c9.html",
-      "PackagePath": "staticwebassets\\admin\\fonts\\fontawesome\\index72c9.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\fontawesome\\indexad3f.html",
-      "PackagePath": "staticwebassets\\admin\\fonts\\fontawesome\\indexad3f.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\fontawesome\\indexb70a.html",
-      "PackagePath": "staticwebassets\\admin\\fonts\\fontawesome\\indexb70a.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\fontawesome\\indexbfec.html",
-      "PackagePath": "staticwebassets\\admin\\fonts\\fontawesome\\indexbfec.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\fontawesome\\indexc052.html",
-      "PackagePath": "staticwebassets\\admin\\fonts\\fontawesome\\indexc052.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\fontawesome\\indexf8a0.html",
-      "PackagePath": "staticwebassets\\admin\\fonts\\fontawesome\\indexf8a0.html"
-    },
-    {
       "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\simple-line-icons\\Simple-Line-Icons.eot",
       "PackagePath": "staticwebassets\\admin\\fonts\\simple-line-icons\\Simple-Line-Icons.eot"
     },
@@ -243,6 +175,62 @@
     {
       "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\simple-line-icons\\Simple-Line-Iconsb26c.woff2",
       "PackagePath": "staticwebassets\\admin\\fonts\\simple-line-icons\\Simple-Line-Iconsb26c.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\summernote\\index.html",
+      "PackagePath": "staticwebassets\\admin\\fonts\\summernote\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\summernote\\index30b5.html",
+      "PackagePath": "staticwebassets\\admin\\fonts\\summernote\\index30b5.html"
+    },
+    {
+      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\summernote\\index5851.html",
+      "PackagePath": "staticwebassets\\admin\\fonts\\summernote\\index5851.html"
+    },
+    {
+      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\summernote\\index72c9.html",
+      "PackagePath": "staticwebassets\\admin\\fonts\\summernote\\index72c9.html"
+    },
+    {
+      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\summernote\\indexad3f.html",
+      "PackagePath": "staticwebassets\\admin\\fonts\\summernote\\indexad3f.html"
+    },
+    {
+      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\summernote\\indexb70a.html",
+      "PackagePath": "staticwebassets\\admin\\fonts\\summernote\\indexb70a.html"
+    },
+    {
+      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\summernote\\indexbfec.html",
+      "PackagePath": "staticwebassets\\admin\\fonts\\summernote\\indexbfec.html"
+    },
+    {
+      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\summernote\\indexc052.html",
+      "PackagePath": "staticwebassets\\admin\\fonts\\summernote\\indexc052.html"
+    },
+    {
+      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\summernote\\indexf8a0.html",
+      "PackagePath": "staticwebassets\\admin\\fonts\\summernote\\indexf8a0.html"
+    },
+    {
+      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\summernote\\summernote.eot",
+      "PackagePath": "staticwebassets\\admin\\fonts\\summernote\\summernote.eot"
+    },
+    {
+      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\summernote\\summernote.ttf",
+      "PackagePath": "staticwebassets\\admin\\fonts\\summernote\\summernote.ttf"
+    },
+    {
+      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\summernote\\summernote.woff",
+      "PackagePath": "staticwebassets\\admin\\fonts\\summernote\\summernote.woff"
+    },
+    {
+      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\summernote\\summernote.woff2",
+      "PackagePath": "staticwebassets\\admin\\fonts\\summernote\\summernote.woff2"
+    },
+    {
+      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\fonts\\summernote\\summernoted41d.eot",
+      "PackagePath": "staticwebassets\\admin\\fonts\\summernote\\summernoted41d.eot"
     },
     {
       "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\favicon.png",
@@ -667,46 +655,6 @@
     {
       "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\flags\\in.png",
       "PackagePath": "staticwebassets\\admin\\img\\flags\\in.png"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\flags\\index.html",
-      "PackagePath": "staticwebassets\\admin\\img\\flags\\index.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\flags\\index30b5.html",
-      "PackagePath": "staticwebassets\\admin\\img\\flags\\index30b5.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\flags\\index5851.html",
-      "PackagePath": "staticwebassets\\admin\\img\\flags\\index5851.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\flags\\index72c9.html",
-      "PackagePath": "staticwebassets\\admin\\img\\flags\\index72c9.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\flags\\indexad3f.html",
-      "PackagePath": "staticwebassets\\admin\\img\\flags\\indexad3f.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\flags\\indexb70a.html",
-      "PackagePath": "staticwebassets\\admin\\img\\flags\\indexb70a.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\flags\\indexbfec.html",
-      "PackagePath": "staticwebassets\\admin\\img\\flags\\indexbfec.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\flags\\indexc052.html",
-      "PackagePath": "staticwebassets\\admin\\img\\flags\\indexc052.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\flags\\indexf8a0.html",
-      "PackagePath": "staticwebassets\\admin\\img\\flags\\indexf8a0.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\flags\\io.png",
-      "PackagePath": "staticwebassets\\admin\\img\\flags\\io.png"
     },
     {
       "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\flags\\iq.png",
@@ -1281,42 +1229,6 @@
       "PackagePath": "staticwebassets\\admin\\img\\img-shadow.png"
     },
     {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\index.html",
-      "PackagePath": "staticwebassets\\admin\\img\\index.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\index30b5.html",
-      "PackagePath": "staticwebassets\\admin\\img\\index30b5.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\index5851.html",
-      "PackagePath": "staticwebassets\\admin\\img\\index5851.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\index72c9.html",
-      "PackagePath": "staticwebassets\\admin\\img\\index72c9.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\indexad3f.html",
-      "PackagePath": "staticwebassets\\admin\\img\\indexad3f.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\indexb70a.html",
-      "PackagePath": "staticwebassets\\admin\\img\\indexb70a.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\indexbfec.html",
-      "PackagePath": "staticwebassets\\admin\\img\\indexbfec.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\indexc052.html",
-      "PackagePath": "staticwebassets\\admin\\img\\indexc052.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\indexf8a0.html",
-      "PackagePath": "staticwebassets\\admin\\img\\indexf8a0.html"
-    },
-    {
       "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\img\\login-bg.jpg",
       "PackagePath": "staticwebassets\\admin\\img\\login-bg.jpg"
     },
@@ -1477,46 +1389,6 @@
       "PackagePath": "staticwebassets\\admin\\js\\global\\popper.min.js"
     },
     {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\bootstrap-notify\\bootstrap-notify.min.js",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\bootstrap-notify\\bootstrap-notify.min.js"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\bootstrap-notify\\index.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\bootstrap-notify\\index.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\bootstrap-notify\\index30b5.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\bootstrap-notify\\index30b5.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\bootstrap-notify\\index5851.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\bootstrap-notify\\index5851.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\bootstrap-notify\\index72c9.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\bootstrap-notify\\index72c9.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\bootstrap-notify\\indexad3f.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\bootstrap-notify\\indexad3f.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\bootstrap-notify\\indexb70a.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\bootstrap-notify\\indexb70a.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\bootstrap-notify\\indexbfec.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\bootstrap-notify\\indexbfec.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\bootstrap-notify\\indexc052.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\bootstrap-notify\\indexc052.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\bootstrap-notify\\indexf8a0.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\bootstrap-notify\\indexf8a0.html"
-    },
-    {
       "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\chart.js\\chart.min.js",
       "PackagePath": "staticwebassets\\admin\\js\\plugin\\chart.js\\chart.min.js"
     },
@@ -1561,236 +1433,16 @@
       "PackagePath": "staticwebassets\\admin\\js\\plugin\\datatables\\datatables.min.js"
     },
     {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\datatables\\index.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\datatables\\index.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\datatables\\index30b5.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\datatables\\index30b5.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\datatables\\index5851.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\datatables\\index5851.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\datatables\\index72c9.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\datatables\\index72c9.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\datatables\\indexad3f.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\datatables\\indexad3f.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\datatables\\indexb70a.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\datatables\\indexb70a.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\datatables\\indexbfec.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\datatables\\indexbfec.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\datatables\\indexc052.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\datatables\\indexc052.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\datatables\\indexf8a0.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\datatables\\indexf8a0.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-scrollbar\\index.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-scrollbar\\index.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-scrollbar\\index30b5.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-scrollbar\\index30b5.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-scrollbar\\index5851.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-scrollbar\\index5851.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-scrollbar\\index72c9.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-scrollbar\\index72c9.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-scrollbar\\indexad3f.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-scrollbar\\indexad3f.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-scrollbar\\indexb70a.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-scrollbar\\indexb70a.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-scrollbar\\indexbfec.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-scrollbar\\indexbfec.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-scrollbar\\indexc052.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-scrollbar\\indexc052.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-scrollbar\\indexf8a0.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-scrollbar\\indexf8a0.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-scrollbar\\jquery.scrollbar.min.js",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-scrollbar\\jquery.scrollbar.min.js"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-ui-1.12.1.custom\\index.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-ui-1.12.1.custom\\index.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-ui-1.12.1.custom\\index30b5.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-ui-1.12.1.custom\\index30b5.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-ui-1.12.1.custom\\index5851.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-ui-1.12.1.custom\\index5851.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-ui-1.12.1.custom\\index72c9.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-ui-1.12.1.custom\\index72c9.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-ui-1.12.1.custom\\indexad3f.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-ui-1.12.1.custom\\indexad3f.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-ui-1.12.1.custom\\indexb70a.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-ui-1.12.1.custom\\indexb70a.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-ui-1.12.1.custom\\indexbfec.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-ui-1.12.1.custom\\indexbfec.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-ui-1.12.1.custom\\indexc052.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-ui-1.12.1.custom\\indexc052.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-ui-1.12.1.custom\\indexf8a0.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-ui-1.12.1.custom\\indexf8a0.html"
-    },
-    {
       "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-ui-1.12.1.custom\\jquery-ui.min.js",
       "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-ui-1.12.1.custom\\jquery-ui.min.js"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-ui-touch-punch\\index.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-ui-touch-punch\\index.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-ui-touch-punch\\index30b5.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-ui-touch-punch\\index30b5.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-ui-touch-punch\\index5851.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-ui-touch-punch\\index5851.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-ui-touch-punch\\index72c9.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-ui-touch-punch\\index72c9.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-ui-touch-punch\\indexad3f.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-ui-touch-punch\\indexad3f.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-ui-touch-punch\\indexb70a.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-ui-touch-punch\\indexb70a.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-ui-touch-punch\\indexbfec.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-ui-touch-punch\\indexbfec.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-ui-touch-punch\\indexc052.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-ui-touch-punch\\indexc052.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-ui-touch-punch\\indexf8a0.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-ui-touch-punch\\indexf8a0.html"
     },
     {
       "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery-ui-touch-punch\\jquery.ui.touch-punch.min.js",
       "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery-ui-touch-punch\\jquery.ui.touch-punch.min.js"
     },
     {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery.sparkline\\index.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery.sparkline\\index.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery.sparkline\\index30b5.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery.sparkline\\index30b5.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery.sparkline\\index5851.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery.sparkline\\index5851.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery.sparkline\\index72c9.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery.sparkline\\index72c9.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery.sparkline\\indexad3f.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery.sparkline\\indexad3f.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery.sparkline\\indexb70a.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery.sparkline\\indexb70a.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery.sparkline\\indexbfec.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery.sparkline\\indexbfec.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery.sparkline\\indexc052.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery.sparkline\\indexc052.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery.sparkline\\indexf8a0.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery.sparkline\\indexf8a0.html"
-    },
-    {
       "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jquery.sparkline\\jquery.sparkline.min.js",
       "PackagePath": "staticwebassets\\admin\\js\\plugin\\jquery.sparkline\\jquery.sparkline.min.js"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jqvmap\\index.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jqvmap\\index.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jqvmap\\index30b5.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jqvmap\\index30b5.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jqvmap\\index5851.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jqvmap\\index5851.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jqvmap\\index72c9.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jqvmap\\index72c9.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jqvmap\\indexad3f.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jqvmap\\indexad3f.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jqvmap\\indexb70a.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jqvmap\\indexb70a.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jqvmap\\indexbfec.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jqvmap\\indexbfec.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jqvmap\\indexc052.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jqvmap\\indexc052.html"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jqvmap\\indexf8a0.html",
-      "PackagePath": "staticwebassets\\admin\\js\\plugin\\jqvmap\\indexf8a0.html"
     },
     {
       "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\admin\\js\\plugin\\jqvmap\\jquery.vmap.min.js",
@@ -2253,30 +1905,6 @@
       "PackagePath": "staticwebassets\\css\\simplebar.min.css"
     },
     {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\fonts\\fontawesome-webfont914c.eot",
-      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont914c.eot"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\fonts\\fontawesome-webfont914c.svg",
-      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont914c.svg"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\fonts\\fontawesome-webfont914c.ttf",
-      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont914c.ttf"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\fonts\\fontawesome-webfont914c.woff",
-      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont914c.woff"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\fonts\\fontawesome-webfont914c.woff2",
-      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfont914c.woff2"
-    },
-    {
-      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\fonts\\fontawesome-webfontd41d.eot",
-      "PackagePath": "staticwebassets\\fonts\\fontawesome-webfontd41d.eot"
-    },
-    {
       "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\images\\404-bg.jpg",
       "PackagePath": "staticwebassets\\images\\404-bg.jpg"
     },
@@ -2551,6 +2179,18 @@
     {
       "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\images\\pro-banner.jpg",
       "PackagePath": "staticwebassets\\images\\pro-banner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\images\\product\\22e9713e-d9c8-49be-bbd7-b9bdb1d82f89-HTML-404-Error-Page.gif",
+      "PackagePath": "staticwebassets\\images\\product\\22e9713e-d9c8-49be-bbd7-b9bdb1d82f89-HTML-404-Error-Page.gif"
+    },
+    {
+      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\images\\product\\81c449c5-08f2-4f11-849f-3f02a1959dbb-326298242_1164429957581032_1091570586410026342_n.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\81c449c5-08f2-4f11-849f-3f02a1959dbb-326298242_1164429957581032_1091570586410026342_n.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\images\\product\\cd85b48d-4653-472e-a2f0-68c30066ac5b-326298242_1164429957581032_1091570586410026342_n.jpg",
+      "PackagePath": "staticwebassets\\images\\product\\cd85b48d-4653-472e-a2f0-68c30066ac5b-326298242_1164429957581032_1091570586410026342_n.jpg"
     },
     {
       "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\images\\product\\product_10_md.jpg",

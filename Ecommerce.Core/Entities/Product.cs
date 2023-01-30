@@ -11,7 +11,6 @@ namespace Ecommerce.Core.Entities
         public string Name { get; set; }
         public decimal Price { get; set; }
         public decimal? Discount { get; set; }
-        public int? Count { get; set; }
         public string Description { get; set; }
         public string DescriptionTitle { get; set; }
         public string LongDescription { get; set; }
@@ -20,9 +19,6 @@ namespace Ecommerce.Core.Entities
         public List<ProductOption> ProductOptions { get; set; }     
         public List<ProductImage>? ProductImages { get; set; }
         public List<ProductCategory>? ProductCategories { get; set; }    
-
-
-
 
 
     }

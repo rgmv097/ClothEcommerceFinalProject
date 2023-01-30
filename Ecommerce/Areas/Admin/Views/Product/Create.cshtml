@@ -5,7 +5,7 @@
             <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
                 <div class="">
                     <div class="header d-sm-flex align-items-center  text-center">
-                        <h1 class="page-header banner-title">Category</h1>
+                        <h1 class="page-header banner-title">Product</h1>
                         <ul class="breadcrumb justify-content-sm-start justify-content-center">
                             <li><a asp-controller="dashboard" asp-action="index"><i class="icon-home"></i></a></li>
                             <li><a href="#">Product</a></li>
@@ -36,7 +36,7 @@
                             </div>
 
                             <div class="row">
-                                <div asp-validation-summary="All" class="text-danger"></div>
+                                <div asp-validation-summary="All" class="text-danger font-weight-bold"></div>
 
                                 <div class="col-12">
                                     <div class="input-box form-group">
@@ -116,7 +116,7 @@
                                         <div class="row">
                                             <label asp-for="Price" class="col-md-3">Price</label>
                                             <div class="col-md-9">
-                                                <input asp-for="Price" class="form-control" placeholder="Price">
+                                                <input asp-for="Price" type="number" class="form-control" placeholder="Price">
                                                 <span asp-validation-for="Price" class="text-danger font-weight-bold"></span>
                                             </div>
                                         </div>
@@ -127,7 +127,7 @@
                                         <div class="row">
                                             <label asp-for="DiscountPrice" class="col-md-3">Discount Price</label>
                                             <div class="col-md-9">
-                                                <input asp-for="DiscountPrice" class="form-control" placeholder="Discount Price">
+                                                <input asp-for="DiscountPrice" type="number" class="form-control" placeholder="Discount Price">
                                                 <span asp-validation-for="DiscountPrice" class="text-danger font-weight-bold"></span>
                                             </div>
                                         </div>
@@ -195,7 +195,7 @@
                                                 </button>
                                             </div>
                                         </div>
-                                        <div id="product-options"></div>
+                                        <div id="product-options"></div>                                   
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -217,7 +217,7 @@
                                             <label asp-for="IsStatus" class="col-md-3">Status</label>
                                             <div class="col-md-9">
                                                 <select asp-for="IsStatus" class="form-control">
-                                                    <option value="true" selected="selected">Enabled</option>
+                                                    <option value="true" selected="selected" >Enabled</option>
                                                     <option value="false">Disabled</option>
                                                 </select>
                                             </div>
@@ -263,19 +263,6 @@
             $(this).parents('.product-options').remove();
             productOptionIndex -= 1;
         })
-
-
-        $('#isMain').change(function () {
-            if ($(this).is(":checked")) {
-                $("#parentDiv").addClass("d-none");
-                $("#iconDiv").removeClass("d-none");
-
-            }
-            else {
-                $("#parentDiv").removeClass("d-none");
-                $("#iconDiv").addClass("d-none");
-            }
-        });
 
         var btn = document.getElementById("btn");
         var input = document.getElementById("Sku");
