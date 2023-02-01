@@ -7,10 +7,16 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.Core.Entities
 {
-    public class User:IdentityUser
+    public class User : IdentityUser
     {
-        string Firsname { get; set; }
-        string Lastname { get; set; }
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
+        public string? ProfileImage { get; set; }
+        public string Address { get; set; }
+        public string Country { get; set; }
+        public string City { get; set; }
+        public string ZipCode { get; set; }
+        public string EmailConfirmationToken { get; set; }
 
     }
 }

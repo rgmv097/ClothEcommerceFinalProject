@@ -32,9 +32,6 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce.Core\\Ecommerce.Core.csproj": {
-                "projectPath": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce.Core\\Ecommerce.Core.csproj"
-              },
               "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce.Data\\Ecommerce.Data.csproj": {
                 "projectPath": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce.Data\\Ecommerce.Data.csproj"
               }
@@ -51,6 +48,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[3.4.2, )"
+            },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
               "version": "[5.0.17, )"
@@ -68,6 +69,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.13, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[3.4.2, )"
             }
           },
           "imports": [
@@ -280,9 +285,6 @@
             "projectReferences": {
               "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce.BLL\\Ecommerce.BLL.csproj": {
                 "projectPath": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce.BLL\\Ecommerce.BLL.csproj"
-              },
-              "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce.Data\\Ecommerce.Data.csproj": {
-                "projectPath": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce.Data\\Ecommerce.Data.csproj"
               }
             }
           }

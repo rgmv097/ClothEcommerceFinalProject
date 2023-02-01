@@ -21,16 +21,14 @@ namespace Ecommerce.BLL.ViewModels
         public string Availability { get; set; }
         public string Sku { get; set; }
         public string? RemoveImageIds { get; set; }
-        public ICollection<ProductImage> productImages { get; set; }
+        public ICollection<ProductImage> ProductImages { get; set; } = new List<ProductImage>();
         public IFormFile[] Images { get; set; }
-
         public decimal Price { get; set; }
         public decimal? DiscountPrice { get; set; }
         public List<SelectListItem>? ParentCategories { get; set; }
         public int ParentCategoryId { get; set; }
         public List<SelectListItem>? ChildCategories { get; set; }
         public int ChildCategoryId { get; set; }
-        public List<ProductImage>? ProductImages { get; set; }
         public List<ProductOption> ProductOptions { get; set; }
     }
 }

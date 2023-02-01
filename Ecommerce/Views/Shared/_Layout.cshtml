@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>  
+<head>
     <meta charset="utf-8">
     <title>Stylexpo</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,8 +11,8 @@
     <meta name="robots" content="ALL">
     <meta name="rating" content="8 YEARS">
     <meta name="Language" content="en-us">
-    <meta name="GOOGLEBOT" content="NOARCHIVE">  
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">   
+    <meta name="GOOGLEBOT" content="NOARCHIVE">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="~/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="~/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="~/css/simplebar.min.css">
@@ -26,7 +26,7 @@
     <link rel="apple-touch-icon" sizes="114x114" href="~/images/apple-touch-icon-114x114.html">
 </head>
 <body class="homepage">
-    <div class="se-pre-con"></div>   
+    <div class="se-pre-con"></div>
 
     <div class="main">
 
@@ -65,7 +65,7 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                           @await Component.InvokeAsync("CategoryPopup")
+                            @await Component.InvokeAsync("CategoryPopup")
                         </div>
                     </div>
                 </div>
@@ -189,7 +189,7 @@
                                             </a>
                                         </div>
                                         <div class="col-lg-4">
-                                            <a href="account.html#step4">
+                                            <a asp-controller="account" asp-action="changepassword">
                                                 <div class="account-inner">
                                                     <i class="fa fa-key"></i><br />
                                                     <span>Change Pass</span>
@@ -250,7 +250,57 @@
         </div>
         <!-- Popup Links End -->
         <!-- HEADER START -->
-        <header class="navbar navbar-custom container-full-sm" id="header">         
+        <header class="navbar navbar-custom container-full-sm" id="header">
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="top-link top-link-left select-dropdown">
+                                <fieldset>
+                                    <select name="speed" class="countr option-drop">
+                                        <option selected="selected">English</option>
+                                    </select>
+                                    <select name="speed" class="currenc option-drop">
+                                        <option selected="selected">AZN</option>
+                                    </select>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="top-right-link right-side">
+                                <ul>
+                                    <li class="login-icon content">
+                                        <a class="content-link">
+                                            <span class="content-icon"></span>
+                                        </a>
+                                        <a href="login.html" title="Login">Login</a> or
+                                        <a href="register.html" title="Register">Register</a>
+                                        <div class="content-dropdown">
+                                            <ul>
+                                                @if (User.Identity.IsAuthenticated)
+                                                {
+                                                    <li class="login-icon"><a asp-controller="account" asp-action="logout" title="Login" class="text-uppercase"><i class="fa fa-user"></i> @User.Identity.Name</a></li>
+                                                    <li class="login-icon"><a asp-controller="account" asp-action="logout" title="Login"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+                                                }
+                                                else
+                                                {
+                                                    <li class="login-icon"><a asp-controller="account" asp-action="login" title="Login"><i class="fa fa-user"></i> Login</a></li>
+                                                    <li class="register-icon"><a asp-controller="account" asp-action="register" title="Register"><i class="fa fa-user-plus"></i> Register</a></li>
+                                                }
+
+
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="track-icon">
+                                        <a href="#" title="Track your order"><span></span> Track your order</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="header-middle">
                 <div class="container">
                     <hr>
@@ -438,9 +488,9 @@
                                                 </ul>
                                             </div>
                                             <ul class="nav navbar-nav ">
-                                               @await Component.InvokeAsync("CategoryNavbar")
+                                                @await Component.InvokeAsync("CategoryNavbar")
                                             </ul>
-                                           
+
                                         </div>
                                     </div>
                                 </div>
@@ -678,8 +728,9 @@
     <script src="~/js/simplebar.min.js"></script>
     <script src="~/js/owl.carousel.min.js"></script>
     <script src="~/js/custom.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
 </body>
 
-<!-- Mirrored from aaryaweb.info/html/stylexpo/stx001/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Dec 2022 18:21:15 GMT -->
 </html>

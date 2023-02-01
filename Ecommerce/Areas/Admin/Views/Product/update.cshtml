@@ -1,4 +1,22 @@
 ﻿@model ProductUpdateViewModel
+
+@section Style
+    {
+    <style>
+        .delete-bot {
+            margin: 0 !important;
+            padding: 0 !important;
+            align-items: center !important;
+        }
+
+        .productImage {
+            width: 120px !important;
+            height: 120px !important;
+            object-fit: contain !important;
+        }
+    </style>
+    }
+
 <div class="content">
     <div class="panel-header bg-white shadow-sm">
         <div class="page-inner  py-3 mb-5">
@@ -155,45 +173,77 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div class="input-box form-group ">
-                                        <div class="row justify-content-center align-items-center product-options my-3" data-index="0">
-                                            <div class="col-md-4">
-                                                <label class="control-label">Product Size</label>
-                                                <select name="ProductOptions[0].Size" class="form-control">
-                                                    <option selected disabled value="0">Please, select size</option>
-                                                    @foreach (ProductSizes productSize in Enum.GetValues(typeof(ProductSizes)))
-                                                    {
-                                                        <option value="@((int)productSize)">
-                                                            @productSize.ToString()
-                                                        </option>
-                                                    }
-                                                </select>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label>Product Color</label>
-                                                <select name="ProductOptions[0].Color" class="form-control">
-                                                    <option selected disabled value="0">Please, color size</option>
-                                                    @foreach (ProductColors productColor in Enum.GetValues(typeof(ProductColors)))
-                                                    {
-                                                        <option value="@((int)productColor)">
-                                                            @productColor.ToString()
-                                                        </option>
-                                                    }
-                                                </select>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <label>Product Count</label>
-                                                <input name="ProductOptions[0].Count" type="number" class="form-control" placeholder="Product Count">
-                                            </div>
-                                            <div class="col-md-2 mt-4 actionButtons">
-                                                <button type="button" class="btn btn-success btn-sm add-product-options mr-2">
-                                                    <i class="fas fa-plus"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div id="product-options"></div>
+                                    <div class="input-box forms-group imagesTable">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th><label class="font-weight-bold">Thumbnail Current Image</label></th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var item in Model.ProductImages)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            <img src="~/images/product/@item.Image" class="img-fluid productImage"
+                                                             alt="">
+                                                        </td>
+
+                                                        <td class="delete-bot">
+                                                            <button type="button" class="btn btn-danger removeProductImage" data-id="@item.Id">Delete</button>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
+
+                                @foreach (var item in Model.ProductOptions)
+                                {
+                                    <div class="col-12">
+                                        <div class="input-box form-group ">
+                                            <div class="row justify-content-center align-items-center product-options my-3" data-index="0">
+                                                <div class="col-md-4">
+                                                    <label class="control-label">Product Size</label>
+                                                    <select asp-for="@item.Size" class="form-control">
+                                                        <option selected disabled value="0">Please, select size</option>
+                                                        @foreach (ProductSizes productSize in Enum.GetValues(typeof(ProductSizes)))
+                                                        {
+                                                            <option value="@((int)productSize)">
+                                                                @productSize.ToString()
+                                                            </option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label>Product Color</label>
+                                                    <select asp-for="@item.Color" class="form-control">
+                                                        <option selected disabled value="0">Please, color size</option>
+                                                        @foreach (ProductColors productColor in Enum.GetValues(typeof(ProductColors)))
+                                                        {
+                                                            <option value="@((int)productColor)">
+                                                                @productColor.ToString()
+                                                            </option>
+                                                        }
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label>Product Count</label>
+                                                    <input asp-for="@item.Count" type="number" class="form-control" placeholder="Product Count">
+                                                </div>
+                                                <div class="col-md-2 mt-4 actionButtons">
+                                                    <button type="button" class="btn btn-success btn-sm add-product-options mr-2">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div id="product-options"></div>
+                                        </div>
+                                    </div>
+                                }
+
                                 <div class="col-12">
                                     <div class="input-box form-group ">
                                         <div class="row">
@@ -239,10 +289,10 @@
             const productOptionsClone = $(".product-options").first().clone();
 
             $(`
-                        <button type="button" class="btn btn-danger btn-sm remove-product-options">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                     `).appendTo(productOptionsClone.find(".actionButtons"))
+                                                                        <button type="button" class="btn btn-danger btn-sm remove-product-options">
+                                                                            <i class="fas fa-trash"></i>
+                                                                        </button>
+                                                                     `).appendTo(productOptionsClone.find(".actionButtons"))
 
             productOptionsClone.find("input, select").each(function (index, productOptionField) {
                 $(productOptionField).val(0);
@@ -293,6 +343,49 @@
                 function errorFunction() {
                     alert("error");
                 }
+            });
+        });
+        const removeSelectedImage = (ev, fileIndex) => {
+            const transferOfData = new DataTransfer();
+            const productImagesInput = document.getElementById("Images");
+            [...productImagesInput.files].filter((file, index) => {
+                if (index === fileIndex) return;
+                transferOfData.items.add(file);
+            });
+            productImagesInput.files = transferOfData.files;
+            ev.target.closest("tr").remove();
+        }
+        $(document).ready(function () {
+            const productImagesInput = document.getElementById("Images");
+            productImagesInput.addEventListener("change", function (e) {
+                const productImages = e.target.files;
+                [...productImages].forEach((productImage, fileIndex) => {
+                    if (productImage.type.match("image")) {
+                        let reader = new FileReader();
+                        reader.readAsDataURL(productImage);
+                        reader.addEventListener("load", function (e) {
+                            $("tbody").append(`
+                                                                            <tr>
+                                                                            <th>Do you want to add this photo?</th>
+                                                                            <td>
+                                                                            <img class="productImage" src="${e.target.result}" />
+                                                                            </td>
+                                                                            <td>
+                                                                            <button type="button" class="btn btn-danger" onClick="removeSelectedImage(event, ${fileIndex})">Delete</button>
+                                                                                                                                    </td>
+                                                                                                                            </tr>
+                                                                                                                            `);
+                        });
+                    }
+                });
+            });
+            let removedImageIds = [];
+            $(".removeProductImage").on("click", function () {
+                const productImageId = $(this).attr("data-id");
+                console.log(productImageId);
+                removedImageIds.push(productImageId);
+                $("input#RemoveImageIds").val(removedImageIds);
+                $(this).attr("disabled", true);
             });
         });
     </script>

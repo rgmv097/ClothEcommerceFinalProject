@@ -23,10 +23,9 @@ namespace Ecommerce.Areas.Admin.Controllers
         }
 
         public async Task<IActionResult> Index()
-        {
+        {          
             var products = await _clothDbContext.Products
                 .Include(p => p.ProductOptions)
-
                 .Include(c => c.ProductCategories)
                 .ThenInclude(c => c.Category)
                 .Include(i => i.ProductImages)
@@ -327,6 +326,7 @@ namespace Ecommerce.Areas.Admin.Controllers
                 LongDescription = product.LongDescription,
                 Price = product.Price,
                 Sku = product.Sku,
+                ProductImages= product.ProductImages,
                 DiscountPrice = product.Discount,
                 ProductOptions = product.ProductOptions,
                 ParentCategories = parentCategories,
@@ -338,8 +338,6 @@ namespace Ecommerce.Areas.Admin.Controllers
 
             foreach (var option in product.ProductOptions)
             {
-
-
                 var ProductOptionVM = new ProductOption
                 {
                     Size = option.Size,
@@ -349,7 +347,7 @@ namespace Ecommerce.Areas.Admin.Controllers
                 };
                 productOptions.Add(ProductOptionVM);
             }
-            productOptions = productUpdateViewModel.ProductOptions;
+            productUpdateViewModel.ProductOptions = productOptions;
 
             return View(productUpdateViewModel);
         }

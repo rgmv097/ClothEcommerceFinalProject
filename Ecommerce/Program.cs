@@ -1,7 +1,9 @@
 using Ecommerce.BLL.Data;
 using Ecommerce.BLL.Helpers;
+using Ecommerce.BLL.Services;
 using Ecommerce.Core.Entities;
 using Ecommerce.Data.DAL;
+using Ecommerce.Data.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,7 +12,7 @@ namespace Ecommerce
 {
     public class Program
     {
-        public async static  Task Main(string[] args)
+        public static async  Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +32,12 @@ namespace Ecommerce
                 options.Password.RequireNonAlphanumeric = false;
                 options.User.RequireUniqueEmail = true;
             }).AddEntityFrameworkStores<ClothDbContext>().AddDefaultTokenProviders();
+
+            //builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
+            //builder.Services.AddTransient<IMailService, MailManager>();
+
+            builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
+            builder.Services.AddTransient<IMailService, MailManager>();
 
             builder.Services.Configure<AdminUser>(builder.Configuration.GetSection("AdminUser"));
             

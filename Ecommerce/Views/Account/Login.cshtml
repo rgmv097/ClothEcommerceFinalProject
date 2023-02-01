@@ -1,0 +1,74 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!-- Bread Crumb STRAT -->
+<div class="banner inner-banner1 ">
+    <div class="container">
+        <section class="banner-detail center-xs">
+            <h1 class="banner-title">Login</h1>
+            <div class="bread-crumb right-side float-none-xs">
+                <ul>
+                    <li><a asp-controller="home" asp-action="index">Home</a>/</li>
+                    <li><span>Login</span></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>
+<!-- Bread Crumb END -->
+<!-- CONTAIN START -->
+<section class="checkout-section ptb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6 col-lg-8 col-md-8 ">
+                        <form asp-action="login" class="main-form full" method="post" asp-route-returnUrl="@Model.ReturnUrl">
+                            <div class="row">
+                                <div class="col-12 mb-20">
+                                    <div class="heading-part heading-bg">
+                                        <h2 class="heading">Customer Login</h2>
+                                        <div asp-validation-summary="ModelOnly" class="text-danger font-weight-bold"></div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="input-box">
+                                        <label asp-for="Username">UserName</label>
+                                        <input asp-for="Username"  placeholder="Enter UserName">
+                                        <span asp-validation-for="Username" class="text-danger font-weight-bold"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="input-box">
+                                        <label asp-for="Password">Password</label>
+                                        <input asp-for="Password" placeholder="Enter your Password">
+                                        <span asp-validation-for="Password" class="text-danger font-weight-bold"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="check-box left-side">
+                                        <span>
+                                            <input asp-for="RememberMe" class="checkbox">
+                                            <label asp-for="RememberMe">Remember Me</label>
+                                        </span>
+                                    </div>
+                                    <button type="submit" class="btn-color right-side">Log In</button>
+                                </div>
+                                <div class="col-12">
+                                    <a title="Forgot Password" class="forgot-password mtb-20" href="#">Forgot your password?</a>
+                                    <hr>
+                                </div>
+                                <div class="col-12">
+                                    <div class="new-account align-center mt-20"> <span>New to Stylexpo?</span> <a class="link" title="Register with Stylexpo" asp-controller="account" asp-action="register">Create New Account</a> </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- CONTAINER END -->
