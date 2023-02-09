@@ -25,6 +25,7 @@ namespace Ecommerce.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {          
             var products = await _clothDbContext.Products
+                .OrderByDescending(p => p.Id)
                 .Include(p => p.ProductOptions)
                 .Include(c => c.ProductCategories)
                 .ThenInclude(c => c.Category)
@@ -118,6 +119,22 @@ namespace Ecommerce.Areas.Admin.Controllers
                 ProductCategories = new List<ProductCategory>(),
                 ProductOptions = new List<ProductOption>()
             };
+
+            if (!model.MainImage.IsImage())
+            {
+                ModelState.AddModelError("", "Must be selected image");
+                return View(model);
+            }
+
+            if (!model.MainImage.IsAllowedSize(8))
+            {
+                ModelState.AddModelError("", "Image size can be max 8 mb");
+                return View(model);
+            }
+
+            var unicalName = await model.MainImage.GenerateFile(Constants.ProductImages);
+            product.MainImageUrl= unicalName;
+
             List<ProductImage> productImages = new List<ProductImage>();
 
             foreach (var image in model.Images)
@@ -178,22 +195,6 @@ namespace Ecommerce.Areas.Admin.Controllers
                 productOptions.Add(ProductOptionVM);
             }
             product.ProductOptions = productOptions;
-
-            //model.ProductOptions.ForEach(productOptionVm =>
-            //{
-
-            //    var productOption = new ProductOption
-            //    {
-            //        Size = productOptionVm.Size,
-            //        Count = productOptionVm.Count,
-            //        Color = productOptionVm.Color,
-            //        IsStatus = model.IsStatus
-            //    };
-
-            //    productOptions.Add(productOption);
-            //});
-
-            //product.ProductOptions = productOptions;
 
             var parentCategory = await _clothDbContext.Categories
                 .Where(c => c.IsStatus && c.isMain && c.Id == model.ParentCategoryId)
@@ -370,11 +371,13 @@ namespace Ecommerce.Areas.Admin.Controllers
             foreach (var image in productImages)
             {
                 var path = Path.Combine(Constants.ProductImages, image.Image);
-
                 if (System.IO.File.Exists(path))
                     System.IO.File.Delete(path);
             }
 
+            var mainImagPpath = Path.Combine(Constants.ProductImages, product.MainImageUrl);
+            if (System.IO.File.Exists(mainImagPpath))
+                System.IO.File.Delete(mainImagPpath);
 
             _clothDbContext.Products.Remove(product);
             await _clothDbContext.SaveChangesAsync();

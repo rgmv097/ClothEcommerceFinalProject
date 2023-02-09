@@ -36,7 +36,7 @@
                             </div>
 
                             <div class="row">
-                                <div asp-validation-summary="All" class="text-danger font-weight-bold"></div>
+                                <div asp-validation-summary="ModelOnly" class="text-danger font-weight-bold"></div>
 
                                 <div class="col-12">
                                     <div class="input-box form-group">
@@ -150,10 +150,21 @@
                                 <div class="col-12">
                                     <div class="input-box form-group">
                                         <div class="row">
+                                            <label asp-for="MainImage" class="col-md-3">Product Main Image</label>
+                                            <div class="col-md-9">
+                                                <input asp-for="MainImage" class="form-control form-choose" accept="image/*">
+                                                <span asp-validation-for="MainImage" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="input-box form-group">
+                                        <div class="row">
                                             <label asp-for="Images" class="col-md-3">Product Images</label>
                                             <div class="col-md-9">
                                                 <input asp-for="Images" class="form-control form-choose" accept="image/*">
-                                                <span asp-validation-for="ProductImages" class="text-danger font-weight-bold"></span>
+                                                <span asp-validation-for="Images" class="text-danger font-weight-bold"></span>
                                             </div>
                                         </div>
                                     </div>

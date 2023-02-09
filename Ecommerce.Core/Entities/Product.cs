@@ -16,9 +16,11 @@ namespace Ecommerce.Core.Entities
         public string LongDescription { get; set; }
         public string Availability { get; set; }
         public string Sku { get; set; }
+        public string MainImageUrl { get; set; }
         public List<ProductOption> ProductOptions { get; set; }     
         public List<ProductImage>? ProductImages { get; set; }
-        public List<ProductCategory>? ProductCategories { get; set; }    
+        public List<ProductCategory>? ProductCategories { get; set; }
+        public ICollection<WishListProduct> WishListProducts { get; set; }
 
 
     }

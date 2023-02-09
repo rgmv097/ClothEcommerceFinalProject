@@ -22,7 +22,8 @@
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="~/admin/css/custom.css">
-
+    <link rel="stylesheet" href="~/admin/css/fonts.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="shortcut icon" href="~/admin/img/favicon.png">
     @await RenderSectionAsync("Style", false)
 
@@ -204,7 +205,7 @@
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-user animated fadeIn">
-                               
+
                                 <div class="dropdown-user-scroll scrollbar-outer">
                                 <li>
 
@@ -277,9 +278,30 @@
                                 </ul>
                             </div>
                         </li>
+                         <li class="nav-item">
+                           <a data-toggle="collapse" href="#category">
+                                <i class="fas fa-calendar-alt"></i>
+                                <p>Category</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="category">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a asp-controller="category" asp-action="index">
+                                            <span class="sub-item">Categories List</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="category" asp-action="create">
+                                            <span class="sub-item">Add Category</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#slider">
-                                <i class="fa-brands fa-slideshare"></i>
+                                <i class=""></i>
                                 <p>Slider</p>
                                 <span class="caret"></span>
                             </a>
@@ -320,97 +342,6 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a data-toggle="collapse" href="#category">
-                                <i class="fa-solid fa-blog"></i>
-                                <p>Category</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="category">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a asp-controller="category" asp-action="index">
-                                            <span class="sub-item">Categories List</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a asp-controller="category" asp-action="create">
-                                            <span class="sub-item">Add Category</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                           
-                        </li>
-                         <li class="nav-item">
-                            <a data-toggle="collapse" href="#size">
-                                <i class="fa-solid fa-blog"></i>
-                                <p>Size</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="size">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a asp-controller="size" asp-action="index">
-                                            <span class="sub-item">Size List</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a asp-controller="size" asp-action="create">
-                                            <span class="sub-item">Add Size</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                           
-                        </li>
-                        <li class="nav-item ">
-                            <a data-toggle="collapse" href="#sales">
-                                <i class="fas fa-dollar-sign"></i>
-                                <p>Sales</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="sales">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="sales/orders.html">
-                                            <span class="sub-item">Orders</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="sales/orders-details.html">
-                                            <span class="sub-item">Orders Details</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="sales/transactions.html">
-                                            <span class="sub-item">Transactions</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item ">
-                            <a data-toggle="collapse" href="#coupons">
-                                <i class="fas fa-tag"></i>
-                                <p>Coupons</p>
-                                <span class="caret"></span>
-                            </a>
-                            <div class="collapse" id="coupons">
-                                <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="coupons/coupons-list.html">
-                                            <span class="sub-item">Coupons List</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="coupons/create-coupon.html">
-                                            <span class="sub-item">Create Coupon</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
                             <a data-toggle="collapse" href="#users">
                                 <i class="fas fa-user-plus"></i>
                                 <p>Users</p>
@@ -419,59 +350,39 @@
                             <div class="collapse" id="users">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="user/user-list.html">
+                                        <a asp-controller="user">
                                             <span class="sub-item">User List</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="user/create-user.html">
+                                        <a asp-controller="user" asp-action="create">
                                             <span class="sub-item">Create User</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="user/login.html">
-                                            <span class="sub-item">Login</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="user/login-2.html">
-                                            <span class="sub-item">Login 2</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="user/register.html">
-                                            <span class="sub-item">Register</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="user/register-2.html">
-                                            <span class="sub-item">Register 2</span>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a data-toggle="collapse" href="#reports">
-                                <i class="far fa-chart-bar"></i>
-                                <p>Reports</p>
+                            <a data-toggle="collapse" href="#settings">
+                                <i class="fas fa-cog"></i>
+                                <p>Settings</p>
                                 <span class="caret"></span>
                             </a>
-                            <div class="collapse" id="reports">
+                            <div class="collapse" id="settings">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="reports/reports.html">
-                                            <span class="sub-item">Reports</span>
+                                        <a asp-controller="settings" asp-action="index">
+                                            <span class="sub-item">Settings</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="reports/online-report.html">
-                                            <span class="sub-item">Online Report</span>
+                                            <span class="sub-item">Footer Settings</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="reports/statistics.html">
-                                            <span class="sub-item">statistics</span>
+                                            <span class="sub-item"></span>
                                         </a>
                                     </li>
                                 </ul>

@@ -27,11 +27,19 @@ namespace Ecommerce.Controllers
                 .Include(s=>s.Children)
                 .ToListAsync();
 
+            var products = await _clothDbContext.Products
+                .Include(p => p.ProductOptions)
+                .Include(c => c.ProductCategories)
+                .ThenInclude(c => c.Category)
+                .Include(i => i.ProductImages)
+                .ToListAsync();
+
             var viewModel = new HomeViewModel
             {
 
                 Sliders= sliders,
-                Categories= categories
+                Categories= categories,
+                Products= products
             };
 
             return View(viewModel);

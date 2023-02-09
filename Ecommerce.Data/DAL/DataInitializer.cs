@@ -63,7 +63,6 @@ namespace Ecommerce.Data.DAL
                 City= _adminUser.City,
                 ZipCode= _adminUser.Zipcode,
                 Address= _adminUser.Address,
-                EmailConfirmationToken=_adminUser.EmailConfirmationToken,
                 Firstname=_adminUser.Firstname,
                 Lastname=_adminUser.Lastname,
             }, _adminUser.Password);

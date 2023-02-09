@@ -12,8 +12,7 @@ namespace Ecommerce.BLL.ViewModels
     public class CategoryUpdateViewModel:BaseViewModel
     {
         public string Name { get; set; }
-        public IFormFile? Icon { get; set; }
-        public string? IconUrl { get; set; }
+        public string? Icon { get; set; }
         public bool IsMain { get; set; }
         public int? ParentId { get; set; }
         public List<SelectListItem> ParentCategories { get; set; } = new();

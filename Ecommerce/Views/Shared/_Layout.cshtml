@@ -14,16 +14,18 @@
     <meta name="GOOGLEBOT" content="NOARCHIVE">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="~/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="~/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="~/css/simplebar.min.css">
     <link rel="stylesheet" type="text/css" href="~/css/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="~/css/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="~/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="~/css/custom.css" asp-append-version="true">
     <link rel="stylesheet" type="text/css" href="~/css/responsive.css">
     <link rel="shortcut icon" href="~/images/favicon.png">
     <link rel="apple-touch-icon" href="~/images/apple-touch-icon.html">
     <link rel="apple-touch-icon" sizes="72x72" href="~/images/apple-touch-icon-72x72.html">
     <link rel="apple-touch-icon" sizes="114x114" href="~/images/apple-touch-icon-114x114.html">
+    @await RenderSectionAsync("Style", false)
 </head>
 <body class="homepage">
     <div class="se-pre-con"></div>
@@ -308,8 +310,8 @@
                         <div class="col-xl-3 col-md-3 col-6 col-lgmd-20per order-md-1">
                             <div class="header-middle-left">
                                 <div class="navbar-header float-none-sm">
-                                    <a class="navbar-brand page-scroll" href="index-2.html">
-                                        <img alt="Stylexpo" src="~/images/logo.png">
+                                    <a class="navbar-brand page-scroll" asp-controller="home" asp-action="index">
+                                        <img style="height:50px;width:200px;" alt="Stylexpo" src="~/images/loqo.png">
                                     </a>
                                 </div>
                             </div>
@@ -403,7 +405,7 @@
                         </div>
                         <div class="col-xl-6 col-md-6 col-12 col-lgmd-60per order-md-2">
                             <div class="header-right-part">
-                                <div class="category-dropdown select-dropdown">
+                               @* <div class="category-dropdown select-dropdown">
                                     <fieldset>
                                         <select id="search-category" class="option-drop" name="search-category">
                                             <option value="">All Categories</option>
@@ -439,7 +441,7 @@
                                             <option value="34">Accessories</option>
                                         </select>
                                     </fieldset>
-                                </div>
+                                </div>*@
                                 <div class="main-search">
                                     <div class="header_search_toggle desktop-view">
                                         <form>
@@ -731,6 +733,7 @@
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
+    @await RenderSectionAsync("Scripts", false)
 </body>
 
 </html>

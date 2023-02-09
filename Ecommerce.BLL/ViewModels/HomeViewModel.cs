@@ -11,5 +11,6 @@ namespace Ecommerce.BLL.ViewModels
     {
         public List<Slider> Sliders = new List<Slider>();
         public List<Category> Categories = new List<Category>();
+        public List<Product> Products = new List<Product>();
     }
 }

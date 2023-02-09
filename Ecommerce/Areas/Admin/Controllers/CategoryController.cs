@@ -77,23 +77,6 @@ namespace Ecommerce.Areas.Admin.Controllers
 
             if (model.IsMain)
             {
-                if (model.Icon is null)
-                {
-                    ModelState.AddModelError("", "Pls Choose image");
-                    return View(viewModel);
-                }
-                if (!model.Icon.IsImage())
-                {
-                    ModelState.AddModelError("", "Pls Select Image");
-                    return View(viewModel);
-                }
-               
-
-                if (!model.Icon.IsAllowedSize(10))
-                {
-                    ModelState.AddModelError("", "The image cannot be more than 10 MB");
-                    return View(viewModel);
-                }
 
                 if (parentCategories.Any(x => x.Name.ToLower().Equals(model.Name.ToLower())))
                 {
@@ -101,8 +84,6 @@ namespace Ecommerce.Areas.Admin.Controllers
                     return View(viewModel);
                 }
 
-                var unicalName = await model.Icon.GenerateFile(Constants.CategoryIconPath);
-                createdCategory.Icon = unicalName;
             }
             else
             {
@@ -128,7 +109,7 @@ namespace Ecommerce.Areas.Admin.Controllers
 
                 createdCategory.ParentId = model.ParentId;
             }
-
+            createdCategory.Icon = model.Icon;
             createdCategory.Name = model.Name;
             createdCategory.isMain = model.IsMain;
             createdCategory.IsStatus = model.IsStatus;
@@ -220,7 +201,7 @@ namespace Ecommerce.Areas.Admin.Controllers
 
                 dbCategory.ParentId = model.ParentId;
             }
-
+            dbCategory.Icon= model.Icon;
             dbCategory.Name = model.Name;
             dbCategory.isMain = model.IsMain;
             dbCategory.IsStatus = model.IsStatus;
@@ -244,7 +225,9 @@ namespace Ecommerce.Areas.Admin.Controllers
             if (parentCategories.Id != id) return BadRequest();
 
             _clothDbContext.Remove(parentCategories);
+
             await _clothDbContext.SaveChangesAsync();
+
             return RedirectToAction(nameof(Index));
         }
 

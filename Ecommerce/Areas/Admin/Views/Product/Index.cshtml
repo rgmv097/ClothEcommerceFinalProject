@@ -62,11 +62,8 @@
                                         <tr>
 
                                             <td>
-                                                @foreach (var item in product.ProductImages.Take(1))
-                                                {
-
-                                                    <img src="~/images/product/@item.Image" alt="product" class="img-fluid img-thumbnail">
-                                                }
+                                               
+                                                    <img src="~/images/product/@product.MainImageUrl" alt="product" class="img-fluid img-thumbnail">
 
                                             </td>
 

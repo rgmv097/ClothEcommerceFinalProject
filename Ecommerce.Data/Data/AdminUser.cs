@@ -15,8 +15,6 @@ namespace Ecommerce.BLL.Data
         public string City { get; set; }
         public string Country { get; set; }
         public string Zipcode { get; set; }
-        public string EmailConfirmationToken { get; set; }
-
         public string Firstname { get; set; }
         public string Lastname { get; set; }
 

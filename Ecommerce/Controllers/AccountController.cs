@@ -228,35 +228,42 @@ namespace Ecommerce.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ForgetPassword(ForgetPasswordViewModel model)
         {
-            if(!ModelState.IsValid) return View();
 
-            var existUser = await _userManager.FindByEmailAsync(model.Email);
-
-            if(existUser is null)
+            if (!ModelState.IsValid)
             {
-                ModelState.AddModelError("", "The email is not available in the system");
+                ModelState.AddModelError("", "Must be write email address");
                 return View();
             }
 
-            var token = await _userManager.GeneratePasswordResetTokenAsync(existUser);
+            var user = await _userManager.FindByEmailAsync(model.Email);
 
-            var resetLink = Url.Action(
-                nameof(ResetPassword),
-                "Account",
-                new { email = model.Email, token },
-                Request.Scheme,
-                Request.Host.ToString());
-
-            var mailRequest = new RequestEmail
+            if (user is null)
             {
-                ToEmail = model.Email,
-                Body = resetLink,
-                Subject = "Reset link"
-            };
+                ModelState.AddModelError("", "So the email is not available");
+                return View();
+            }
 
-            await _mailManager.SendEmailAsync(mailRequest);
+            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+
+            var link = Url.Action(nameof(ResetPassword), "Account", new { id = user.Id, token }, Request.Scheme, Request.Host.ToString());
+
+            EmailViewModel email = _config.GetSection("Email").Get<EmailViewModel>();
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress(email.SenderEmail, email.SenderName);
+            mail.To.Add(model.Email);
+            mail.Subject = "Reset Password";
+            mail.Body = $"<a href=\"{link}\">Reset Password</a>";
+            mail.IsBodyHtml = true;
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = email.Server;
+            smtp.Port = email.Port;
+            smtp.EnableSsl = true;
+            smtp.Credentials = new NetworkCredential(email.SenderEmail, email.Password);
+            smtp.Send(mail);
 
             return RedirectToAction(nameof(Login));
+
+           
         }
 
         public IActionResult ResetPassword(string email,string token)
@@ -268,10 +275,11 @@ namespace Ecommerce.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
         {
-            if (!ModelState.IsValid) { return View(); }
+            if (!ModelState.IsValid) return View();
 
             var existUser = await _userManager.FindByEmailAsync(model.Email);
-            if(existUser is null) { return BadRequest(); }
+
+            if (existUser is null) return BadRequest();
 
             var result= await _userManager.ResetPasswordAsync(existUser,model.Token,model.Password);
 

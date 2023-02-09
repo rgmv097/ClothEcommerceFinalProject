@@ -46,8 +46,7 @@ namespace Ecommerce
             Constants.BlogPath= Path.Combine(Constants.RootPath, "images", "blog");
             Constants.CategoryIconPath= Path.Combine(Constants.RootPath, "images", "icon");
             Constants.ProductImages = Path.Combine(Constants.RootPath, "images", "product");
-
-
+            Constants.UserImage = Path.Combine(Constants.RootPath, "images", "user");
 
             var app = builder.Build();
 
@@ -75,6 +74,8 @@ namespace Ecommerce
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseStatusCodePagesWithReExecute("/ErrorPages/Error", "?code={0}");
 
             app.UseEndpoints(endpoints =>
             {

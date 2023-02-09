@@ -13,9 +13,13 @@ namespace Ecommerce.BLL.Helpers
         public static string BlogPath;
         public static string CategoryIconPath;
         public static string ProductImages;
+        public static string UserImage;
 
 
         public const string AdminRole = "Admin";
-        public const string UserRole = "User";
+        public const string UserRole = "Customer";
+
+        public const string WISH_LIST_COOKIE_NAME = "WISHLIST";
+        public const string BASKET_COOKIE_NAME = "BASKET";
     }
 }

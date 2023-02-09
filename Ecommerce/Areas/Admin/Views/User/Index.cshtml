@@ -1,0 +1,121 @@
+﻿
+@model List<UserViewModel>
+<div class="content">
+    <div class="panel-header bg-white shadow-sm">
+        <div class="page-inner  py-3 mb-5">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                <div class="">
+                    <div class="header d-sm-flex align-items-center  text-center">
+                        <h1 class="page-header banner-title">Users List</h1>
+                        <ul class="breadcrumb justify-content-sm-start justify-content-center">
+                            <li><a asp-controller="home" asp-action="index"><i class="icon-home"></i></a></li>
+                            <li><a href="#">Users</a></li>
+                            <li><a href="#">Users List</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-head-row justify-content-between">
+                            <div class="card-title"><i class="fas fa-list"></i> Users List</div>
+                            <div class="add-btn">
+                                <a class="btn btn-primary" asp-action="create" data-toggle="tooltip" title="" data-original-title="Create User">
+                                    <i class="fas fa-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="table-responsive dataTables_scroll">
+                            <table id="basic-datatables" class="display table table-hover table-fixed">
+                                <thead>
+                                    <tr>
+                                        <th>Profile</th>
+                                        <th>User Name</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th class="text-right">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var user in Model)
+                                    {
+                                        if (user.ProfileImage is null) user.ProfileImage = "uknown.jpg";
+                                        <tr>
+                                            <td>
+                                                <div class="profile">
+                                                    <img src="~/images/user/@user.ProfileImage" alt="..." class="profile-img rounded-circle">
+                                                </div>
+                                            </td>
+                                            <td>@user.UserName.ToUpper()</td>
+                                            <td>@user.Firstname</td>
+                                            <td>@user.Lastname</td>
+                                            <td>@user.Email</td>
+                                            <td>@user.Role.ToUpper()</td>
+                                            <td class="text-right">
+                                                <a class="btn btn-primary" asp-action="update" asp-route-id="@user.Id" data-toggle="tooltip" data-original-title="Edit"><i class="fas fa-pen"></i></a>
+                                                <div style="display:inline-block">
+                                                    <form class="forms-sample" method="post" asp-action="Delete" asp-route-id="@user.Id">
+                                                        <button type="submit" class="btn btn-primary" data-toggle="tooltip" data-original-title="Delete"><i class="fas fa-times"></i></button>
+
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        let btns = document.querySelectorAll(".forms-sample")
+        btns.forEach(btn =>
+            btn.addEventListener("submit", function (event) {
+                event.preventDefault();
+                swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover this imaginary file!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            btn.submit(),
+                                swal("Poof! Your imaginary file has been deleted!", {
+                                    icon: "success",
+                                });
+                        }
+                        else {
+                            swal("Your imaginary file is safe!");
+                        }
+                    });
+            }));
+    </script>
+
+    <script src="~/admin/js/custom.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#basic-datatables').DataTable({
+            });
+        });
+    </script>
+}

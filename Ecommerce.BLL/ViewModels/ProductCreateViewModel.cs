@@ -18,6 +18,7 @@ namespace Ecommerce.BLL.ViewModels
         public string LongDescription { get; set; }
         public string Availability { get; set; }
         public string Sku { get; set; }
+        public IFormFile MainImage { get; set; }
         public IFormFile[] Images { get; set; }
         public decimal Price { get; set; }
         public decimal? DiscountPrice { get; set; }

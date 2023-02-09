@@ -23,7 +23,7 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <form class="main-form full method="post" asp-action="create" enctype="multipart/form-data">
+                        <form class="main-form full method="post" asp-action="create">
                             <div class="card-header">
                                 <div class="card-head-row justify-content-between">
                                     <div class="card-title"><i class="fas fa-pen"></i> Create Category</div>
@@ -63,11 +63,11 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <div id="iconDiv" class="input-box form-group d-none" >
+                                    <div id="iconDiv" class="input-box form-group d-none">
                                         <div class="row">
                                             <label asp-for="Icon" class="col-md-3 control-label">Category Icon</label>
                                             <div class="col-md-9">
-                                                <input asp-for="Icon" class="form-control" placeholder="Category Icon">
+                                                <input asp-for="Icon" class="form-control" placeholder="Category Icon from Awesome">
                                                 <span asp-validation-for="Icon" class="text-danger font-weight-bold"></span>
                                             </div>
                                         </div>
