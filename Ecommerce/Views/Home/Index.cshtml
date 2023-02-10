@@ -107,7 +107,7 @@
                                         <div class="main-label sale-label"><span>Sale</span></div>
                                     }
                                     <div class="product-image">
-                                        <a href="product-page.html"> <img style="width:270px;height:350px"  src="images/product/@products[i].MainImageUrl" alt="Stylexpo"> </a>
+                                        <a asp-controller="shop" asp-action="details" asp-route-id="@products[i].Id"> <img style="width:270px;height:350px" src="images/product/@products[i].MainImageUrl" alt="Stylexpo"> </a>
                                         <div class="product-detail-inner">
                                             <div class="detail-inner-left align-center">
                                                 <ul>
@@ -117,7 +117,14 @@
 
                                                         </form>
                                                     </li>
-                                                    <li>
+                                                      <li class="pro-wishlist-icon">
+                                                        <a href="#" title="Wishlist" data-id="@products[i].Id"></a>
+                                                      </li>
+                                                      <li class="pro-compare-icon">
+                                                        <a href="#" title="Compare" data-id="@products[i].Id"></a>
+                                                      </li>
+
+                                                  @*  <li>
                                                         <a id="productLink">
                                                             <input type="hidden" id="productId" value="@products[i].Id" />
                                                             <i style="color:red; font-size:25px; margin-top:5px;font-weight:bolder" id=@("favorite"+products[i].Id) class="fa-regular fa-heart"></i>
@@ -130,7 +137,7 @@
                                                             <i style="color:black; font-size:25px; margin-top:5px" class="fa-solid fa-code-compare"></i>
                                                         </a>
 
-                                                    </li>
+                                                    </li>*@
 
 
                                                 </ul>
@@ -140,14 +147,14 @@
                                     @if (products[i].Discount > 0)
                                     {
                                         <div class="product-item-details">
-                                            <div class="product-item-name"> <a href="product-page.html">@products[i].Name</a> </div>
+                                            <div class="product-item-name"> <a asp-controller="shop" asp-action="details" asp-route-id="@products[i].Id">@products[i].Name</a> </div>
                                             <div class="price-box"> <span class="price">$@products[i].Discount</span> <span style="text-decoration:line-through" class="price old-price">$@products[i].Price</span> </div>
                                         </div>
                                     }
                                     else
                                     {
                                         <div class="product-item-details">
-                                            <div class="product-item-name"> <a href="product-page.html">@products[i].Name</a> </div>
+                                            <div class="product-item-name"> <a asp-controller="shop" asp-action="details" asp-route-id="@products[i].Id">@products[i].Name</a> </div>
                                             <div class="price-box"> <span class="price">$@products[i].Price</span></div>
                                         </div>
                                     }
@@ -160,7 +167,7 @@
                                             <div class="main-label sale-label"><span>Sale</span></div>
                                         }
                                         <div class="product-image">
-                                            <a href="product-page.html"> <img style="width:270px;height:350px" src="images/product/@products[i+1].MainImageUrl" alt="Stylexpo"> </a>
+                                            <a asp-controller ="shop" asp-action="details" asp-route-id="@products[i+1].Id"> <img style="width:270px;height:350px" src="images/product/@products[i+1].MainImageUrl" alt="Stylexpo"> </a>
                                             <div class="product-detail-inner">
                                                 <div class="detail-inner-left align-center">
                                                     <ul>
@@ -190,14 +197,14 @@
                                         @if (products[i + 1].Discount > 0)
                                         {
                                             <div class="product-item-details">
-                                                <div class="product-item-name"> <a href="product-page.html">@products[i+1].Name</a> </div>
+                                                <div class="product-item-name"> <a asp-controller="shop" asp-action="details" asp-route-id="@products[i+1].Id">@products[i+1].Name</a> </div>
                                                 <div class="price-box"> <span class="price">$@products[i+1].Discount</span> <span style="text-decoration:line-through" class="price old-price">$@products[i+1].Price</span> </div>
                                             </div>
                                         }
                                         else
                                         {
                                             <div class="product-item-details">
-                                                <div class="product-item-name"> <a href="product-page.html">@products[i+1].Name</a> </div>
+                                                <div class="product-item-name"> <a asp-controller="shop" asp-action="details" asp-route-id="@products[i+1].Id">@products[i+1].Name</a> </div>
                                                 <div class="price-box"> <span class="price">$@products[i+1].Price</span></div>
                                             </div>
                                         }
@@ -1336,15 +1343,29 @@
 <!-- CONTAINER END -->
 @section Scripts{
     <script>
-        $(document).on('click', '#productLink', function () {
-            var productId = $(this).children('#productId').val();
+        $(document).on('click', '.pro-wishlist-icon a', function (e) {
+            e.preventDefault();
+            var productId = $(this).data('id');
+            var $this = $(this);
+            var actionUrl = $(this).parent().hasClass("active") 
+                ? 'DeleteProductFromWishList'
+                : 'AddProductToWishList';
+
             $.ajax({
                 type: "POST",
-                url: '/WishList/AddProductToWishList',
+                url: `/WishList/${actionUrl}`,
                 data: { productId: productId },
                 success: function () {
-                    $("#favorite" + productId).removeStyle("fa-regular fa-heart");
-                    $("#favorite" + productId).addClass("fa-solid fa-heart");
+                  let allIcons = $(`.pro-wishlist-icon > a[data-id=${productId}]`);
+                  let actionBtn = $this.parent();
+
+                    if (actionBtn.hasClass("active")) {
+                     actionBtn.removeClass('active');
+                      allIcons.each((index, el) => $(el).parent().removeClass('active'))
+                      return;
+                  }
+                  actionBtn.addClass('active');
+                  allIcons.each((index, el) => $(el).parent().addClass('active'))
                 },
             });
         })

@@ -1,0 +1,11 @@
+﻿@model List<Category>
+<div class="sidebar-contant">
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li><a href="#">@item.Name<span> (@item.ProductCategories.Count)</span></a></li>
+
+        }
+    </ul>
+
+</div>

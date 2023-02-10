@@ -28,6 +28,8 @@ namespace Ecommerce.Data.DAL
         public DbSet<WishListProduct> WishListProduct { get; set; }
         public DbSet<Basket> Baskets { get; set; }
         public DbSet<BasketProduct> BasketProducts { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
 
 
     }

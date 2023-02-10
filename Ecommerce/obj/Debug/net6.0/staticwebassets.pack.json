@@ -2529,6 +2529,10 @@
       "PackagePath": "staticwebassets\\js\\owl.carousel.min.js"
     },
     {
+      "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\js\\search.js",
+      "PackagePath": "staticwebassets\\js\\search.js"
+    },
+    {
       "Id": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\js\\simplebar.min.js",
       "PackagePath": "staticwebassets\\js\\simplebar.min.js"
     },

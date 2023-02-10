@@ -1826,7 +1826,7 @@ _______________________________________________________*/
 }
 .product-item .detail-inner-left ul li:last-child { padding-right: 0; }
 .detail-inner-left ul li a {
-	/*background: #fff url("../images/sprite.png") no-repeat scroll 0 0;*/
+	background: #fff url("../images/sprite.png") no-repeat scroll 0 0;
 	display: inline-block;
 	height: 37px;
 	width: 37px;
@@ -1840,9 +1840,11 @@ _______________________________________________________*/
 	-o-transition: all 0.4s ease 0s;
 }
 
-	.detail-inner-left ul li a:hover {
-		background-color: #FFFFFF;
-	}
+.detail-inner-left ul li.pro-wishlist-icon a:hover,
+.detail-inner-left ul li.pro-wishlist-icon.active a {
+	background-color: #ff3030;
+}
+
 .detail-inner-left.right-side ul li a {
     border-right: 1px solid #ff8786;
     padding: 0 18px;
@@ -1884,6 +1886,22 @@ _______________________________________________________*/
 .detail-inner-left ul li button:hover {
     background: #ff3030;
     color: #fff;
+}
+.detail-inner-left ul li.pro-wishlist-icon a {
+	background-position: -9px -380px;
+}
+
+.detail-inner-left ul li.pro-wishlist-icon.active a,
+.detail-inner-left ul li.pro-wishlist-icon a:hover {
+	background-position: -9px -417px;
+}
+
+.detail-inner-left ul li.pro-compare-icon a {
+   background-position: -9px -456px;
+}
+
+.detail-inner-left ul li.pro-compare-icon a:hover {
+	background-position: -9px -491px;
 }
 .detail-inner-left button span, .cat-box-inner .cart-link button span {
     background: rgba(0, 0, 0, 0) url("../images/sprite.png") no-repeat scroll -11px -318px;

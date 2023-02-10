@@ -1,4 +1,11 @@
-﻿@model List<BasketProductViewModel> 
+﻿@model List<BasketProductViewModel>
+@{
+    decimal subTotal = 0;
+    foreach (var item in Model)
+    {
+        subTotal += item.Count * item.Price;
+    }
+}
 <div class="banner inner-banner1 ">
     <div class="container">
         <section class="banner-detail center-xs">
@@ -32,43 +39,43 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
+
                                 @foreach (var product in Model)
                                 {
                                     <tr id=@(product.Id+"tbody")>
-                                        
+
                                         <td>
-                                            <input type="hidden" value="@product.Id" />
+                                            <input type="hidden" data-product-id value="@product.Id" />
                                             <a href="product-page.html">
                                                 <div class="product-image">
-                                                    <img alt="Stylexpo" src="images/product/@product.Image">
+                                                    <img alt="Stylexpo" style="width:74px;height:96px;" src="images/product/@product.Image">
                                                 </div>
                                             </a>
                                         </td>
                                         <td>
                                             <div class="product-title">
-                                                <h4><a href="product-page.html">@product.Name</a></h4>
-                                                <div class=""><span class="text-muted mr-2">Color :</span>gray</div>
-                                                <div class=""><span class="text-muted mr-2">Size :</span>XL</div>
+                                                <h4><a asp-asp-controller="shop" asp-action="details" asp-route-id="@product.Id">@product.Name</a></h4>
+                                                <div class=""><span class="text-muted mr-2">Color :</span>@product.Color</div>
+                                                <div class=""><span class="text-muted mr-2">Size :</span>@product.Size</div>
                                             </div>
                                         </td>
                                         <td>
                                             <ul>
                                                 <li>
                                                     <div class="base-price price-box">
-                                                        <span class="price">&#8380;@product.Price</span>
+                                                        <span id="product-price" data-price="@product.Price" class="price">&#8380;@product.Price</span>
                                                     </div>
                                                 </li>
                                             </ul>
                                         </td>
                                         <td>
-                                            <div  class="product-qty">
+                                            <div class="product-qty">
                                                 <input id="product-quality" min="1" style="width:50px" type="number" value="@product.Count" />
                                             </div>
                                         </td>
                                         <td>
                                             <div class="total-price price-box">
-                                                <span class="price">&#8380;@(product.Count * product.Price)</span>
+                                                <span id=@("product-total-price" + product.Id)>&#8380;@(product.Count * product.Price)</span>
                                             </div>
                                         </td>
                                         <td>
@@ -76,8 +83,8 @@
                                         </td>
                                     </tr>
                                 }
-                               
-                                
+
+
                             </tbody>
                         </table>
                     </div>
@@ -88,7 +95,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="mt-30">
-                        <a href="shop.html" class="btn btn-color">
+                        <a asp-controller="shop" asp-action="index" class="btn btn-color">
                             <span><i class="fa fa-angle-left"></i></span>
                             Continue Shopping
                         </a>
@@ -96,7 +103,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="mt-30 right-side float-none-xs">
-                        <a class="btn btn-color">Update Cart</a>
+                        <a asp-controller="basket" class="btn btn-color">Update Cart</a>
                     </div>
                 </div>
             </div>
@@ -104,50 +111,7 @@
         <hr>
         <div class="mtb-30">
             <div class="row">
-                <div class="col-md-6 mb-xs-40">
-                    <div class="estimate">
-                        <div class="heading-part mb-20">
-                            <h3 class="sub-heading">Estimate shipping and tax</h3>
-                        </div>
-                        <form class="full">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="input-box select-dropdown mb-20">
-                                        <fieldset>
-                                            <select id="country_id" class="option-drop">
-                                                <option selected="" value="">Select Country</option>
-                                                <option value="1">India</option>
-                                                <option value="2">China</option>
-                                                <option value="3">Pakistan</option>
-                                            </select>
-                                        </fieldset>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="input-box select-dropdown mb-20">
-                                        <fieldset>
-                                            <select id="state_id" class="option-drop">
-                                                <option selected="" value="1">Select State/Province</option>
-                                                <option value="2">---</option>
-                                            </select>
-                                        </fieldset>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="input-box select-dropdown mb-20">
-                                        <fieldset>
-                                            <select id="city_id" class="option-drop">
-                                                <option selected="" value="1">Select City</option>
-                                                <option value="2">---</option>
-                                            </select>
-                                        </fieldset>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <div class="cart-total-table commun-table">
                         <div class="table-responsive">
                             <table class="table">
@@ -161,23 +125,7 @@
                                         <td>Item(s) Subtotal</td>
                                         <td>
                                             <div class="price-box">
-                                                <span class="price">$160.00</span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Shipping</td>
-                                        <td>
-                                            <div class="price-box">
-                                                <span class="price">$0.00</span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><b>Amount Payable</b></td>
-                                        <td>
-                                            <div class="price-box">
-                                                <span class="price"><b>$160.00</b></span>
+                                                <span class="price">&#8380;@subTotal</span>
                                             </div>
                                         </td>
                                     </tr>
@@ -192,9 +140,9 @@
         <div class="mt-30">
             <div class="row">
                 <div class="col-12">
-                    <div class="right-side float-none-xs">
+                    <div class="left-side float-none-xs">
                         <a href="checkout.html" class="btn btn-color">
-                            Proceed to checkout
+                            Proceed to Order
                             <span><i class="fa fa-angle-right"></i></span>
                         </a>
                     </div>
@@ -205,40 +153,7 @@
 </section>
 
 @section Scripts{
-        <script>
 
-            $(document).on('click', '#remove-from-cart', function () {
-                var productId = $(this).parent().parent().children().children().val();
-                console.log(productId)
+    <script asp-append-version="true" src="~/js/cino.js"></script>
 
-            $.ajax({
-                type: "POST",
-                url: "/Basket/DeleteProductBasket",
-                data: { productId: productId },
-                success: function () {
-                    $("#" + productId + "tbody").remove();
-                },
-                Error: function () {
-                    alert("Somthing Wrong");
-                }
-            });
-            });
-
-            $(document).on('change', '#product-quality', function () {
-                var productId = $(this).parent().parent().parent().children().children().val();
-                var count = $(this).val();
-
-             $.ajax({
-                    type: "POST",
-                    url: "/Basket/ChangeProductQuality",
-                    data: { productId: productId , count : count },
-                    success: function () {
-                      
-                    },
-                   
-                });
-
-
-            });
-        </script>
 }

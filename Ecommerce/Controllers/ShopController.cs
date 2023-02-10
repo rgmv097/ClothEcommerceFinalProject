@@ -1,4 +1,5 @@
-﻿using Ecommerce.Data.DAL;
+﻿using Ecommerce.Core.Entities;
+using Ecommerce.Data.DAL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -36,6 +37,27 @@ namespace Ecommerce.Controllers
                .FirstOrDefaultAsync();
 
             return View(product);
+        }
+
+        public async Task<IActionResult> Search(string? searchText)
+        {
+            if (string.IsNullOrEmpty(searchText))
+                return NoContent();
+
+            var products = await _clothDbContext.Products
+                .Where(product => product.Name.ToLower().StartsWith(searchText.ToLower()))
+                .ToListAsync();
+
+            var model = new List<Product>();
+
+            products.ForEach(product => model.Add(new Product
+            {
+                Id = product.Id,
+                Name = product.Name,
+                MainImageUrl = product.MainImageUrl,
+            }));
+
+            return PartialView("_ProductSearchPartial", products);
         }
     }
 }

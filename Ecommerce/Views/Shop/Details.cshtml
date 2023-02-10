@@ -12,7 +12,7 @@
     <link rel="apple-touch-icon" href="~/images/apple-touch-icon.html">
     <link rel="apple-touch-icon" sizes="72x72" href="~/images/apple-touch-icon-72x72.html">
     <link rel="apple-touch-icon" sizes="114x114" href="~/images/apple-touch-icon-114x114.html">
-}
+    }
 
 @{
     Product product = Model;
@@ -92,10 +92,10 @@
                                             <label>Size</label>
                                             <fieldset>
 
-                                                <select class="selectpicker form-control option-drop">
-                                                  @foreach (ProductOption option in options)
+                                                <select id="product-size" class="selectpicker form-control option-drop">
+                                                    @foreach (ProductOption option in options)
                                                     {
-                                                        <option id="product-size" value="@((int)option.Size)">
+                                                        <option value="@((int)option.Size)">
                                                             @option.Size.ToString()
                                                         </option>
                                                     }
@@ -105,10 +105,10 @@
                                         <div class="product-color select-arrow input-box select-dropdown mb-20">
                                             <label>Color</label>
                                             <fieldset>
-                                                <select class="selectpicker form-control option-drop">
+                                                <select id="product-color" class="selectpicker form-control option-drop">
                                                     @foreach (ProductOption option in options)
                                                     {
-                                                        <option id="product-color" value="@((int)option.Color)">
+                                                        <option value="@((int)option.Color)">
                                                             @option.Color.ToString()
                                                         </option>
                                                     }
@@ -116,27 +116,25 @@
                                             </fieldset>
                                         </div>
                                         <div class="mb-20">
-                                            <div class="product-qty">
-                                                <label for="qty">Qty:</label>
-                                                <div class="custom-qty">
-                                                    <button onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) result.value--;return false;" class="reduced items" type="button"> <i class="fa fa-minus"></i> </button>
-                                                    <input type="text" class="input-text qty" title="Qty" value="1" maxlength="8" id="qty" name="qty">
-                                                    <button onclick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="increase items" type="button"> <i class="fa fa-plus"></i> </button>
-                                                </div>
-                                            </div>
                                             <div class="bottom-detail cart-button">
                                                 <ul>
                                                     <li class="pro-cart-icon">
                                                         <input type="hidden" value="@product.Id" />
-                                                        <a id="add-product-to-cart" class="btn-color">Add to Cart</a>
-                                                       
+                                                        <a id="add-product-to-cart" style="background-color:red;" class="btn btn-danger"><i class="fa-solid fa-cart-arrow-down"></i> Add to Cart</a>
+
                                                     </li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="bottom-detail">
                                             <ul>
-                                                <li class="pro-wishlist-icon"><a href="wishlist.html"><span></span>Wishlist</a></li>
+                                                <li>
+                                                    <a id="productLink">
+                                                        <input type="hidden" id="productId" value="@product.Id" />
+                                                        <i style="color:red; font-size:25px; margin-top:5px;font-weight:bolder" id=@("favorite"+product.Id) class="fa-regular fa-heart"></i> WishList
+                                                    </a>
+
+                                                </li>
                                                 <li class="pro-compare-icon"><a href="compare.html"><span></span>Compare</a></li>
                                                 <li class="pro-email-icon"><a href="#"><span></span>Email to Friends</a></li>
                                             </ul>
@@ -214,231 +212,7 @@
             <div class="pro_cat">
                 <div class="row">
                     <div class="owl-carousel pro-cat-slider">
-                        <div class="item">
-                            <div class="product-item">
-                                <div class="main-label new-label"><span>New</span></div>
-                                <div class="product-image">
-                                    <a href="product-page.html"> <img src="images/product/product_1_md.jpg" alt="Stylexpo"> </a>
-                                    <div class="product-detail-inner">
-                                        <div class="detail-inner-left align-center">
-                                            <ul>
-                                                <li class="pro-cart-icon">
-                                                    <form>
-                                                        <button title="Add to Cart"><span></span>Add to Cart</button>
-                                                    </form>
-                                                </li>
-                                                <li class="pro-wishlist-icon "><a href="wishlist.html" title="Wishlist"></a></li>
-                                                <li class="pro-compare-icon"><a href="compare.html" title="Compare"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-item-details">
-                                    <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
-                                    <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-item">
-                                <div class="main-label sale-label"><span>Sale</span></div>
-                                <div class="product-image">
-                                    <a href="product-page.html"> <img src="images/product/product_2_md.jpg" alt="Stylexpo"> </a>
-                                    <div class="product-detail-inner">
-                                        <div class="detail-inner-left align-center">
-                                            <ul>
-                                                <li class="pro-cart-icon">
-                                                    <form>
-                                                        <button title="Add to Cart"><span></span>Add to Cart</button>
-                                                    </form>
-                                                </li>
-                                                <li class="pro-wishlist-icon "><a href="wishlist.html" title="Wishlist"></a></li>
-                                                <li class="pro-compare-icon"><a href="compare.html" title="Compare"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-item-details">
-                                    <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
-                                    <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-item">
-                                <div class="main-label new-label"><span>New</span></div>
-                                <div class="main-label sale-label"><span>Sale</span></div>
-                                <div class="product-image">
-                                    <a href="product-page.html"> <img src="images/product/product_3_md.jpg" alt="Stylexpo"> </a>
-                                    <div class="product-detail-inner">
-                                        <div class="detail-inner-left align-center">
-                                            <ul>
-                                                <li class="pro-cart-icon">
-                                                    <form>
-                                                        <button title="Add to Cart"><span></span>Add to Cart</button>
-                                                    </form>
-                                                </li>
-                                                <li class="pro-wishlist-icon "><a href="wishlist.html" title="Wishlist"></a></li>
-                                                <li class="pro-compare-icon"><a href="compare.html" title="Compare"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-item-details">
-                                    <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
-                                    <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-item">
-                                <div class="product-image">
-                                    <a href="product-page.html"> <img src="images/product/product_4_md.jpg" alt="Stylexpo"> </a>
-                                    <div class="product-detail-inner">
-                                        <div class="detail-inner-left align-center">
-                                            <ul>
-                                                <li class="pro-cart-icon">
-                                                    <form>
-                                                        <button title="Add to Cart"><span></span>Add to Cart</button>
-                                                    </form>
-                                                </li>
-                                                <li class="pro-wishlist-icon "><a href="wishlist.html" title="Wishlist"></a></li>
-                                                <li class="pro-compare-icon"><a href="compare.html" title="Compare"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-item-details">
-                                    <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
-                                    <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-item">
-                                <div class="main-label sale-label"><span>Sale</span></div>
-                                <div class="product-image">
-                                    <a href="product-page.html"> <img src="images/product/product_5_md.jpg" alt="Stylexpo"> </a>
-                                    <div class="product-detail-inner">
-                                        <div class="detail-inner-left align-center">
-                                            <ul>
-                                                <li class="pro-cart-icon">
-                                                    <form>
-                                                        <button title="Add to Cart"><span></span>Add to Cart</button>
-                                                    </form>
-                                                </li>
-                                                <li class="pro-wishlist-icon "><a href="wishlist.html" title="Wishlist"></a></li>
-                                                <li class="pro-compare-icon"><a href="compare.html" title="Compare"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-item-details">
-                                    <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
-                                    <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-item">
-                                <div class="product-image">
-                                    <a href="product-page.html"> <img src="images/product/product_6_md.jpg" alt="Stylexpo"> </a>
-                                    <div class="product-detail-inner">
-                                        <div class="detail-inner-left align-center">
-                                            <ul>
-                                                <li class="pro-cart-icon">
-                                                    <form>
-                                                        <button title="Add to Cart"><span></span>Add to Cart</button>
-                                                    </form>
-                                                </li>
-                                                <li class="pro-wishlist-icon "><a href="wishlist.html" title="Wishlist"></a></li>
-                                                <li class="pro-compare-icon"><a href="compare.html" title="Compare"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-item-details">
-                                    <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
-                                    <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-item">
-                                <div class="main-label new-label"><span>New</span></div>
-                                <div class="product-image">
-                                    <a href="product-page.html"> <img src="images/product/product_7_md.jpg" alt="Stylexpo"> </a>
-                                    <div class="product-detail-inner">
-                                        <div class="detail-inner-left align-center">
-                                            <ul>
-                                                <li class="pro-cart-icon">
-                                                    <form>
-                                                        <button title="Add to Cart"><span></span>Add to Cart</button>
-                                                    </form>
-                                                </li>
-                                                <li class="pro-wishlist-icon "><a href="wishlist.html" title="Wishlist"></a></li>
-                                                <li class="pro-compare-icon"><a href="compare.html" title="Compare"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-item-details">
-                                    <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
-                                    <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-item">
-                                <div class="main-label sale-label"><span>Sale</span></div>
-                                <div class="product-image">
-                                    <a href="product-page.html"> <img src="images/product/product_8_md.jpg" alt="Stylexpo"> </a>
-                                    <div class="product-detail-inner">
-                                        <div class="detail-inner-left align-center">
-                                            <ul>
-                                                <li class="pro-cart-icon">
-                                                    <form>
-                                                        <button title="Add to Cart"><span></span>Add to Cart</button>
-                                                    </form>
-                                                </li>
-                                                <li class="pro-wishlist-icon "><a href="wishlist.html" title="Wishlist"></a></li>
-                                                <li class="pro-compare-icon"><a href="compare.html" title="Compare"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-item-details">
-                                    <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
-                                    <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="product-item">
-                                <div class="main-label new-label"><span>New</span></div>
-                                <div class="main-label sale-label"><span>Sale</span></div>
-                                <div class="product-image">
-                                    <a href="product-page.html"> <img src="images/product/product_9_md.jpg" alt="Stylexpo"> </a>
-                                    <div class="product-detail-inner">
-                                        <div class="detail-inner-left align-center">
-                                            <ul>
-                                                <li class="pro-cart-icon">
-                                                    <form>
-                                                        <button title="Add to Cart"><span></span>Add to Cart</button>
-                                                    </form>
-                                                </li>
-                                                <li class="pro-wishlist-icon "><a href="wishlist.html" title="Wishlist"></a></li>
-                                                <li class="pro-compare-icon"><a href="compare.html" title="Compare"></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="product-item-details">
-                                    <div class="product-item-name"> <a href="product-page.html">Defyant Reversible Dot Shorts</a> </div>
-                                    <div class="price-box"> <span class="price">$80.00</span> <del class="price old-price">$100.00</del> </div>
-                                </div>
-                            </div>
-                        </div>
+                        @await Component.InvokeAsync("ProductRelated")
                     </div>
                 </div>
             </div>
@@ -448,7 +222,19 @@
 @section Scripts
     {
     <script src="~/js/fotorama.js"></script>
-    <script src="~/js/cino.js"></script>
-
-})
+    <script asp-append-version="true" src="~/js/cino.js"></script>
+    <script>
+        $(document).on('click', '#productLink', function () {
+            var productId = $(this).children('#productId').val();
+            $.ajax({
+                type: "POST",
+                url: '/WishList/AddProductToWishList',
+                data: { productId: productId },
+                success: function () {
+                    $("#favorite" + productId).removeStyle("fa-regular fa-heart");
+                    $("#favorite" + productId).addClass("fa-solid fa-heart");
+                },
+            });
+        })
+    </script>
 }

@@ -1,6 +1,7 @@
 ﻿using Ecommerce.BLL.Helpers;
 using Ecommerce.BLL.ViewModels;
 using Ecommerce.Core.Entities;
+using Ecommerce.Core.Enums;
 using Ecommerce.Data.DAL;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -41,8 +42,6 @@ namespace Ecommerce.Controllers
                 if (basket != null)
                 {
 
-
-
                     foreach (var item in basket.BasketProducts)
                     {
                         var product = _clothDbContext.Products
@@ -55,7 +54,9 @@ namespace Ecommerce.Controllers
                             Name = product.Name,
                             Price = product.Price,
                             Count = item.Count,
-                            Image = product.MainImageUrl
+                            Image = product.MainImageUrl,
+                            Color = item.Color,
+                            Size = item.Size,
                         });
                     }
                 }
@@ -78,7 +79,9 @@ namespace Ecommerce.Controllers
                             Name = product.Name,
                             Price = product.Price,
                             Count = item.Count,
-                            Image = product.MainImageUrl
+                            Image = product.MainImageUrl,
+                            Color = item.Color,
+                            Size = item.Size,
                         });
                     }
                 }
@@ -87,13 +90,15 @@ namespace Ecommerce.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddToBasket(int? productId)
+        public async Task<IActionResult> AddToBasket(int? productId, int? productSize, int? productColor)
         {
             if (productId is null) return NotFound();
+            if (productSize is null) return BadRequest();
+            if (productColor is null) return BadRequest();
 
             var product = await _clothDbContext.Products
                    .Where(product => product.Id == productId)
-                   .Include(o=>o.ProductOptions)
+                   .Include(o => o.ProductOptions)
                    .FirstOrDefaultAsync();
 
             if (product is null) return NotFound();
@@ -109,13 +114,12 @@ namespace Ecommerce.Controllers
                    .Where(x => x.UserId == user.Id)
                    .Include(x => x.BasketProducts)
                    .ThenInclude(x => x.Product)
-                   //.ThenInclude(o => product.ProductOptions)
                    .FirstOrDefaultAsync();
 
                 if (existBasket != null)
                 {
                     var existBasketProduct = existBasket.BasketProducts
-                      .Where(x => x.ProductId == product.Id)
+                      .Where(x => x.ProductId == product.Id && x.Color == (ProductColors)productColor && x.Size == (ProductSizes)productSize)
                       .FirstOrDefault();
 
                     if (existBasketProduct is not null)
@@ -134,6 +138,8 @@ namespace Ecommerce.Controllers
                         {
                             BasketId = createdBasket.Id,
                             ProductId = product.Id,
+                            Color = (ProductColors)productColor,
+                            Size = (ProductSizes)productSize,
                             Count = 1
                         });
                     }
@@ -154,6 +160,8 @@ namespace Ecommerce.Controllers
                         {
                             BasketId = createdBasket.Id,
                             ProductId = product.Id,
+                            Color = (ProductColors)productColor,
+                            Size = (ProductSizes)productSize,
                             Count = 1
                         }
                     };
@@ -172,6 +180,8 @@ namespace Ecommerce.Controllers
                 var basketItem = new BasketViewModel
                 {
                     Id = product.Id,
+                    Color = (ProductColors)productColor,
+                    Size = (ProductSizes)productSize,
                     Count = 1,
                 };
 
@@ -180,7 +190,7 @@ namespace Ecommerce.Controllers
                     basketItems = JsonConvert.DeserializeObject<List<BasketViewModel>>(basket);
 
                     var existProduct = basketItems
-                        .Where(x => x.Id == product.Id)
+                        .Where(x => x.Id == product.Id && x.Color == (ProductColors)productColor && x.Size == (ProductSizes)productSize)
                         .FirstOrDefault();
 
                     if (existProduct is not null) existProduct.Count++;
@@ -213,8 +223,9 @@ namespace Ecommerce.Controllers
                     .Where(x => x.UserId == user.Id)
                     .Include(x => x.BasketProducts)
                     .ThenInclude(p => p.Product)
-                    .ThenInclude(o => o.ProductOptions)
                     .FirstOrDefaultAsync();
+
+                if (basket == null) return NotFound();
 
                 var existProduct = basket.BasketProducts.Where(product => product.ProductId == productId).FirstOrDefault();
 
@@ -266,11 +277,14 @@ namespace Ecommerce.Controllers
                     .Where(x => x.UserId == user.Id)
                     .Include(x => x.BasketProducts)
                     .ThenInclude(p => p.Product)
-                    .ThenInclude(o => o.ProductOptions)
                     .FirstOrDefaultAsync();
+
+                if (existBasket == null) return NotFound();
 
                 var existBasketProduct = existBasket.BasketProducts
                     .FirstOrDefault(x => x.ProductId == existProduct.Id);
+
+                if (existBasketProduct == null) return NotFound();
 
                 existBasket.BasketProducts.Remove(existBasketProduct);
 

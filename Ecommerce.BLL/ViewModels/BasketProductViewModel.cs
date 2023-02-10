@@ -1,4 +1,5 @@
 ﻿using Ecommerce.Core.Entities;
+using Ecommerce.Core.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,7 @@ namespace Ecommerce.BLL.ViewModels
         public string Image { get; set; }
         public int Count { get; set; }
         public decimal Price { get; set; }
+        public ProductSizes Size { get; set; }
+        public ProductColors Color { get; set; }
     }
 }

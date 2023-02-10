@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MprOXcbjYlIy7TWFfXi3zp8DGv3wlD93fmplFmbP1/0=",
+  "Hash": "zuKrVe2A1i+d9N5S9xn1AwAfcKyg+r9AAQJiBXtD7E0=",
   "Source": "Ecommerce",
   "BasePath": "_content/Ecommerce",
   "Mode": "Default",
@@ -10776,6 +10776,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\owl.carousel.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\js\\search.js",
+      "SourceId": "Ecommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\",
+      "BasePath": "_content/Ecommerce",
+      "RelativePath": "js/search.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\search.js"
     },
     {
       "Identity": "C:\\Users\\rcing\\OneDrive\\İş masası\\EcommerceFinalProject\\Ecommerce\\wwwroot\\js\\simplebar.min.js",

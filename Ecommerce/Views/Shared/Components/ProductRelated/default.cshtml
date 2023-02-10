@@ -1,0 +1,39 @@
+﻿@model List<Product>
+@foreach (var product in Model)
+{
+    <div class="item">
+        <div class="product-item">
+            @if (product.Discount > 0)
+            {
+                <div class="main-label new-label"><span>Sale</span></div>
+            }
+            <div class="product-image">
+                <a asp-controller="shop" asp-action="details" asp-route-id="@product.Id"> <img style="width:270px;height:350px;" src="~/images/product/@product.MainImageUrl" alt="image"> </a>
+                <div class="product-detail-inner">
+                    <div class="detail-inner-left align-center">
+                        <ul>
+                            <li class="pro-cart-icon">
+                                <form>
+                                    <button title="Go Product Detail"><span></span>Go Product Detail</button>
+                                </form>
+                            </li>
+                            <li class="pro-wishlist-icon"><a href="wishlist.html" title="Wishlist"></a></li>
+                            <li class="pro-compare-icon"><a href="compare.html" title="Compare"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item-details">
+                <div class="product-item-name"> <a asp-controller="shop" asp-action="details" asp-route-id="@product.Id">@product.Name</a> </div>
+                @if (product.Discount > 0)
+                {
+                    <div class="price-box"> <span class="price">&#8380;@product.Discount</span> <span style="text-decoration:line-through" class="price old-price">&#8380;@product.Price</span> </div>
+                }
+                else
+                {
+                    <div class="price-box"> <span class="price">&#8380;@product.Price</span></div>
+                }
+            </div>
+        </div>
+    </div>
+}
