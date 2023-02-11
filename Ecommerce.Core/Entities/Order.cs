@@ -8,8 +8,11 @@ namespace Ecommerce.Core.Entities
 {
     public class Order:Entity
     {
+        public int Id { get; set; }
+        public bool Published { get; set; }
+        public bool Status { get; set; }
         public string UserId { get; set; }
-        public List<OrderItem> OrderItems{ get; set; }
-        public DateTime DateTime { get; set; }
+        public DateTime CreateTime { get; set; }
+        public List<OrderItem> OrderItems { get; set; }
     }
 }

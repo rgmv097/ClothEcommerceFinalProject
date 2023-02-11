@@ -1,0 +1,72 @@
+﻿@model List<OrderViewModel>
+<div class="content">
+    <div class="panel-header bg-white shadow-sm">
+        <div class="page-inner  py-3 mb-5">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                <div class="">
+                    <div class="header d-sm-flex align-items-center  text-center">
+                        <h1 class="page-header banner-title">Orders</h1>
+                        <ul class="breadcrumb justify-content-sm-start justify-content-center">
+                            <li><a asp-controller="dashboard" asp-action="index"><i class="icon-home"></i></a></li>
+                            <li><a href="#">Sales</a></li>
+                            <li><a href="#">Orders</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title"><i class="fas fa-list"></i> Order List</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="basic-datatables" class="display table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Order Id</th>
+                                        <th>Product</th>
+                                        <th>Payment Status</th>
+                                        <th>Order Status</th>
+                                        <th>Date</th>
+                                        <th>Total</th>
+                                        <th class="text-right">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>#@item.Id</td>
+                                            <td>
+                                                <div class="d-flex">
+                                                  
+                                                    @*<img src="~/images/product/@item." alt="product" class="img-fluid img-thumbnail">*@
+                                                    <img src="../../assets/img/product/@item" alt="product" class="img-fluid img-thumbnail">
+                                                </div>
+                                            </td>
+                                            <td><span class="badge badge-secondary">Cash On Delivery</span></td>
+                                            <td>Paypal</td>
+                                            <td><span class="badge badge-success">Delivered</span></td>
+                                            <td>Dec 08,2020</td>
+                                            <td>$320.00</td>
+                                            <td class="text-right">
+                                                <a class="btn btn-primary" href="orders-details.html" data-toggle="tooltip" title="" data-original-title="View Details"><i class="fas fa-pen"></i></a>
+                                            </td>
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
