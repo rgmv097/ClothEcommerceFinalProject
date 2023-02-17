@@ -1,7 +1,5 @@
 ﻿@model SliderCreateViewModel
-@section Style{
-    <link rel="stylesheet" href="~/admin/css/summernote.min.css">
-}
+
 <div class="content">
     <div class="panel-header bg-white shadow-sm">
         <div class="page-inner  py-3 mb-5">
@@ -109,16 +107,7 @@
 </div>
 
 @section Scripts{
-    <script src="~/admin/js/plugin/summernote/summernote.min.js"></script>
-    <partial name="_CKEScriptsPartial" />
-    <script>
-        $('#summernote').summernote({
-            placeholder: 'Description',
-            tabsize: 2,
-            height: 250
-        });
-    </script>
-    
+    <partial name="_CKEScriptsPartial" />  
 	}
 
 

@@ -128,15 +128,20 @@
                                         </div>
                                         <div class="bottom-detail">
                                             <ul>
-                                                <li>
-                                                    <a id="productLink">
-                                                        <input type="hidden" id="productId" value="@product.Id" />
-                                                        <i style="color:red; font-size:25px; margin-top:5px;font-weight:bolder" id=@("favorite"+product.Id) class="fa-regular fa-heart"></i> WishList
-                                                    </a>
-
-                                                </li>
-                                                <li class="pro-compare-icon"><a href="compare.html"><span></span>Compare</a></li>
-                                                <li class="pro-email-icon"><a href="#"><span></span>Email to Friends</a></li>
+                                                @if (product.IsLike)
+                                                {
+                                                    <li class="pro-wishlist-icon active">
+                                                        <a href="#" title="Wishlist" data-id="@product.Id"><span></span>Wishlist</a>
+                                                    </li>
+                                                    
+                                                }else
+                                                {
+                                                    <li class="pro-wishlist-icon">
+                                                        <a href="#" title="Wishlist" data-id="@product.Id"><span></span>Wishlist</a>
+                                                    </li>
+                                                }
+                                                <li class="pro-compare-icon"><a href="#"><span></span>Compare</a></li>
+                                               
                                             </ul>
                                         </div>
                                         <div class="share-link">
@@ -224,17 +229,32 @@
     <script src="~/js/fotorama.js"></script>
     <script asp-append-version="true" src="~/js/cino.js"></script>
     <script>
-        $(document).on('click', '#productLink', function () {
-            var productId = $(this).children('#productId').val();
+        $(document).on('click', '.pro-wishlist-icon a', function (e) {
+            e.preventDefault();
+            var productId = $(this).data('id');
+            var $this = $(this);
+            var actionUrl = $(this).parent().hasClass("active")
+                ? 'DeleteProductFromWishList'
+                : 'AddProductToWishList';
+
             $.ajax({
                 type: "POST",
-                url: '/WishList/AddProductToWishList',
+                url: `/WishList/${actionUrl}`,
                 data: { productId: productId },
                 success: function () {
-                    $("#favorite" + productId).removeStyle("fa-regular fa-heart");
-                    $("#favorite" + productId).addClass("fa-solid fa-heart");
+                    let allIcons = $(`.pro-wishlist-icon > a[data-id=${productId}]`);
+                    let actionBtn = $this.parent();
+
+                    if (actionBtn.hasClass("active")) {
+                        actionBtn.removeClass('active');
+                        allIcons.each((index, el) => $(el).parent().removeClass('active'))
+                        return;
+                    }
+                    actionBtn.addClass('active');
+                    allIcons.each((index, el) => $(el).parent().addClass('active'))
                 },
             });
         })
     </script>
+   
 }

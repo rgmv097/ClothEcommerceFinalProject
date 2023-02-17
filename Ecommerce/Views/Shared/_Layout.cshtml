@@ -44,8 +44,7 @@
             </div>
         </div>
     </div>
-    </div>
-    </div>
+   
     <!-- Popup Links End -->
     <!-- HEADER START -->
     <header class="navbar navbar-custom container-full-sm" id="header">
@@ -126,10 +125,12 @@
                                         <span></span>
                                     </a>
                                 </li>
-                                <li class="cart-icon">
-                                    <a asp-controller="basket" asp-action="index"> <span> <small class="cart-notification">2</small> </span> </a>
-                                  
-                                </li>
+                               
+                                    <li class="cart-icon">
+                                        <a asp-controller="basket" asp-action="index"> <span> </span> </a>
+
+                                    </li>
+                                
                                 <li class="side-toggle">
                                     <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button"><i class="fa fa-bars"></i></button>
                                 </li>
@@ -171,12 +172,12 @@
                                                     <a class="content-link">
                                                         <span class="content-icon"></span>
                                                     </a>
-                                                    <a href="login.html" title="Login">Login</a> or
-                                                    <a href="register.html" title="Register">Register</a>
+                                                    <a asp-controller="account" asp-action="index" title="Login">Login</a> or
+                                                    <a asp-controller="account" asp-action="register" title="Register">Register</a>
                                                     <div class="content-dropdown">
                                                         <ul>
-                                                            <li class="login-icon"><a href="login.html" title="Login"><i class="fa fa-user"></i> Login</a></li>
-                                                            <li class="register-icon"><a href="register.html" title="Register"><i class="fa fa-user-plus"></i> Register</a></li>
+                                                            <li class="login-icon"><a asp-controller="account" asp-action="index" title="Login"><i class="fa fa-user"></i> Login</a></li>
+                                                            <li class="register-icon"><aasp-controller ="account" asp-action="register" title="Register"><i class="fa fa-user-plus"></i> Register</a></li>
                                                         </ul>
                                                     </div>
                                                 </li>
@@ -208,41 +209,20 @@
                                     <div class="mobilemenu-content">
                                         <ul class="nav navbar-nav" id="menu-main">
                                             <li class="active">
-                                                <a href="index-2.html"><span>Home</span></a>
+                                                <a asp-controller="home" asp-action="index"><span>Home</span></a>
                                             </li>
                                             <li>
-                                                <a href="shop.html"><span>Shop</span></a>
+                                                <a asp-controller="shop" asp-action="index"><span>Shop</span></a>
                                             </li>
                                             <li>
-                                                <a href="about.html"><span>About Us</span></a>
+                                                <a asp-controller="about" asp-action="index"><span>About Us</span></a>
                                             </li>
                                             <li>
-                                                <a href="blog.html"><span>Blog</span></a>
+                                                <a asp-controller="blog" asp-action="index"><span>Blog</span></a>
                                             </li>
                                             <li>
-                                                <a href="contact.html"><span>Contact</span></a>
-                                            </li>
-                                            <li class="level dropdown ">
-                                                <span class="opener plus"></span>
-                                                <a href="#" class="page-scroll"><span>Pages</span></a>
-                                                <div class="megamenu mobile-sub-menu">
-                                                    <div class="megamenu-inner-top">
-                                                        <ul class="sub-menu-level1">
-                                                            <li class="level2">
-                                                                <ul class="sub-menu-level2 ">
-                                                                    <li class="level3"><a href="account.html"><span>■</span>Account</a></li>
-                                                                    <li class="level3"><a href="checkout.html"><span>■</span>Checkout</a></li>
-                                                                    <li class="level3"><a href="compare.html"><span>■</span>Compare</a></li>
-                                                                    <li class="level3"><a href="wishlist.html"><span>■</span>Wishlist</a></li>
-                                                                    <li class="level3"><a href="404.html"><span>■</span>404 Error</a></li>
-                                                                    <li class="level3"><a href="single-blog.html"><span>■</span>Single Blog</a></li>
-                                                                    <li class="level3"><a href="product-page.html"><span>■</span>Product Details</a></li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                                <a asp-controller="contact" asp-action="index"><span>Contact</span></a>
+                                            </li>                                           
                                         </ul>
                                     </div>
                                 </div>
@@ -300,129 +280,13 @@
     </section>
     <!-- News Letter End -->
     <!-- FOOTER START -->
-    <div class="footer">
-        <div class="container">
-            <div class="footer-inner">
-                <div class="footer-middle">
-                    <div class="row">
-                        <div class="col-lg-3 f-col">
-                            <div class="footer-static-block">
-                                <span class="opener plus"></span>
-                                <div class="f-logo">
-                                    <a href="index-2.html" class="">
-                                        <img src="~/images/footer-logo.png" alt="Stylexpo">
-                                    </a>
-                                </div>
-                                <div class="footer-block-contant">
-                                    <p>Lorem khaled ipsum is a major key to success. It’s on you how you want to live your life. Always remember in the jungle there’s a lot of they in.</p>
-                                    <p class="d-none d-xl-block">It’s on you how you want to live your life. Everyone has a choice.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 f-col">
-                            <div class="footer-static-block">
-                                <span class="opener plus"></span>
-                                <h3 class="title">Help <span></span></h3>
-                                <ul class="footer-block-contant link">
-                                    <li><a href="#">Gift Cards</a></li>
-                                    <li><a href="#">Order Status</a></li>
-                                    <li><a href="#">Free Shipping</a></li>
-                                    <li><a href="#">Return & Exchange </a></li>
-                                    <li><a href="#">International</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 f-col">
-                            <div class="footer-static-block">
-                                <span class="opener plus"></span>
-                                <h3 class="title">Guidance <span></span></h3>
-                                <ul class="footer-block-contant link">
-                                    <li><a href="#"> Delivery information</a></li>
-                                    <li><a href="#"> Privacy Policy</a></li>
-                                    <li><a href="#"> Terms & Conditions</a></li>
-                                    <li><a href="#"> Contact</a></li>
-                                    <li><a href="#"> Sitemap</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 f-col">
-                            <div class="footer-static-block">
-                                <span class="opener plus"></span>
-                                <h3 class="title">address<span></span></h3>
-                                <ul class="footer-block-contant address-footer">
-                                    <li class="item">
-                                        <i class="fa fa-map-marker"> </i>
-                                        <p>150-A Appolo aprtment, opp. Hopewell Junction, <br>Allen st Road, new york-405001.</p>
-                                    </li>
-                                    <li class="item">
-                                        <i class="fa fa-envelope"> </i>
-                                        <p> <a href="#">infoservices@stylexpo.com </a> </p>
-                                    </li>
-                                    <li class="item">
-                                        <i class="fa fa-phone"> </i>
-                                        <p>(+91) 9834567890</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="footer-bottom ">
-                    <div class="row mtb-30">
-                        <div class="col-lg-6 ">
-                            <div class="copy-right ">© 2019 All Rights Reserved. Design By <a href="#">Aaryaweb</a></div>
-                        </div>
-                        <div class="col-lg-6 ">
-                            <div class="footer_social pt-xs-15 center-sm">
-                                <ul class="social-icon">
-                                    <li><div class="title">Follow us on :</div></li>
-                                    <li><a title="Facebook" class="facebook"><i class="fa fa-facebook"> </i></a></li>
-                                    <li><a title="Twitter" class="twitter"><i class="fa fa-twitter"> </i></a></li>
-                                    <li><a title="Linkedin" class="linkedin"><i class="fa fa-linkedin"> </i></a></li>
-                                    <li><a title="RSS" class="rss"><i class="fa fa-rss"> </i></a></li>
-                                    <li><a title="Pinterest" class="pinterest"><i class="fa fa-pinterest"> </i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row align-center mtb-30 ">
-                        <div class="col-12 ">
-                            <div class="site-link">
-                                <ul>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                    <li><a href="#">Customer </a></li>
-                                    <li><a href="#">Service</a></li>
-                                    <li><a href="#">Privacy</a></li>
-                                    <li><a href="#">Policy </a></li>
-                                    <li><a href="#">Accessibility</a></li>
-                                    <li><a href="#">Directory </a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row align-center">
-                        <div class="col-12 ">
-                            <div class="payment">
-                                <div class="payment_icon">
-                                    <a href="javascript:void(0)"><img src="~/images/payment-footer.png" alt="Stylexpo"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  @await Component.InvokeAsync("Settings")
     <div class="scroll-top">
         <div class="scrollup"></div>
     </div>
     <!-- FOOTER END -->
-    </div>
     <script src="~/js/jquery-1.12.3.min.js"></script>
-    <script src="../../../../cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    @*<script src="../../../../cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>*@
     <script src="~/js/bootstrap.min.js"></script>
     <script src="~/js/jquery.downCount.js"></script>
     <script src="~/js/jquery-ui.min.js"></script>
@@ -435,7 +299,7 @@
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
-    @await RenderSectionAsync("Scripts", false)
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 
 </html>

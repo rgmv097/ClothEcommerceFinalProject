@@ -26,32 +26,6 @@
                         </div>
                         @await Component.InvokeAsync("CategoriesSideBar")
                     </div>
-                    <div class="sidebar-box mb-40">
-                        <span class="opener plus"></span>
-                        <div class="sidebar-title">
-                            <h3><span>Shop by</span></h3>
-                        </div>
-                        <div class="sidebar-contant">
-                            <div class="size mb-20">
-                                <div class="inner-title">Size</div>
-                                <ul>
-                                    <li><a href="#">S (10)</a></li>
-                                    <li><a href="#">M (05)</a></li>
-                                    <li><a href="#">L (10)</a></li>
-                                    <li><a href="#">XL (08)</a></li>
-                                    <li><a href="#">XXL (05)</a></li>
-                                </ul>
-                            </div>
-                            <div class="mb-20">
-                                <div class="inner-title">Color</div>
-                                <ul>
-                                    <li><a href="#">Black <span>(0)</span></a></li>
-                                    <li><a href="#">Blue <span>(05)</span></a></li>
-                                    <li><a href="#">Brown <span>(10)</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
                     @await Component.InvokeAsync("BestSeller")
                 </div>
             </div>
@@ -112,17 +86,19 @@
                                             <div class="product-detail-inner">
                                                 <div class="detail-inner-left align-center">
                                                     <ul>
-                                                        <li>
-                                                            <a id="productLink">
-                                                                <input type="hidden" id="productId" value="@product.Id" />
-                                                                <i style="color:red; font-size:25px; margin-top:5px;font-weight:bolder" id=@("favorite"+product.Id) class="fa-regular fa-heart"></i>
-                                                            </a>
-                                                        </li>
-                                                        <li class="pro-compare-icon">
-                                                            <a href="compare.html" title="Compare">
-                                                                <i style="color:black; font-size:25px; margin-top:5px" class="fa-solid fa-code-compare"></i>
-                                                            </a>
-                                                        </li>
+                                                        @if (product.IsLike)
+                                                        {
+                                                            <li class="pro-wishlist-icon active">
+                                                                <a data-id="@product.Id" href="#" title="Wishlist"></a>
+                                                            </li>
+                                                        }
+                                                        else
+                                                        {
+                                                            <li class="pro-wishlist-icon">
+                                                                <a data-id="@product.Id" href="#" title="Wishlist"></a>
+                                                            </li>
+                                                        }
+                                                        <li class="pro-compare-icon"><a href="#" title="Compare"></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -149,15 +125,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <div class="pagination-bar">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                                        <li class="active"><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                                    </ul>
-                                </div>
+                                @await Html.PartialAsync("_PaginationPartialView")
                             </div>
                         </div>
                     </div>
@@ -168,15 +136,29 @@
 </section>
 @section Scripts{
     <script>
-        $(document).on('click', '#productLink', function () {
-            var productId = $(this).children('#productId').val();
+        $(document).on('click', '.pro-wishlist-icon a', function (e) {
+            e.preventDefault();
+            var productId = $(this).data('id');
+            var $this = $(this);
+            var actionUrl = $(this).parent().hasClass("active")
+                ? 'DeleteProductFromWishList'
+                : 'AddProductToWishList';
+
             $.ajax({
                 type: "POST",
-                url: '/WishList/AddProductToWishList',
+                url: `/WishList/${actionUrl}`,
                 data: { productId: productId },
                 success: function () {
-                    $("#favorite" + productId).removeStyle("fa-regular fa-heart");
-                    $("#favorite" + productId).addClass("fa-solid fa-heart");
+                    let allIcons = $(`.pro-wishlist-icon > a[data-id=${productId}]`);
+                    let actionBtn = $this.parent();
+
+                    if (actionBtn.hasClass("active")) {
+                        actionBtn.removeClass('active');
+                        allIcons.each((index, el) => $(el).parent().removeClass('active'))
+                        return;
+                    }
+                    actionBtn.addClass('active');
+                    allIcons.each((index, el) => $(el).parent().addClass('active'))
                 },
             });
         })

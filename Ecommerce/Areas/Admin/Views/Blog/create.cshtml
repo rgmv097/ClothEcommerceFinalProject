@@ -1,7 +1,5 @@
 ﻿@model BlogCreateViewModel
-@section Style{
-    <link rel="stylesheet" href="~/admin/css/summernote.min.css">
-}
+
 <div class="content">
     <div class="panel-header bg-white shadow-sm">
         <div class="page-inner  py-3 mb-5">
@@ -56,7 +54,7 @@
                                         <div class="row">
                                             <label asp-for="Description" class="col-md-3 control-label">Description</label>
                                             <div class="col-md-9">
-                                                <textarea asp-for="Description" id="summernote"  class="form-control" placeholder="Description" rows="10" cols="30"></textarea>
+                                                <textarea asp-for="Description"  class="form-control editor" placeholder="Description" rows="10" cols="30"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -109,16 +107,7 @@
 </div>
 
 @section Scripts{
-    <script src="~/admin/js/plugin/summernote/summernote.min.js"></script>
-  
-    <script>
-        $('#summernote').summernote({
-            placeholder: 'Description',
-            tabsize: 2,
-            height: 250
-        });
-    </script>
-   
-	}
+    <partial name="_CKEScriptsPartial" />
 
+	}
 

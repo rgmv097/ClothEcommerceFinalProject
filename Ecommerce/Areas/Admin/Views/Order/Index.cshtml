@@ -30,10 +30,10 @@
                                     <tr>
                                         <th>Order Id</th>
                                         <th>Product</th>
-                                        <th>Payment Status</th>
-                                        <th>Order Status</th>
                                         <th>Date</th>
+                                        <th>Quantity</th>
                                         <th>Total</th>
+                                        <th>Status</th>
                                         <th class="text-right">Action</th>
                                     </tr>
                                 </thead>
@@ -46,16 +46,33 @@
                                                 <div class="d-flex">
                                                   
                                                     @*<img src="~/images/product/@item." alt="product" class="img-fluid img-thumbnail">*@
-                                                    <img src="../../assets/img/product/@item" alt="product" class="img-fluid img-thumbnail">
+                                                    @foreach (var orderItem in item.Items)
+                                                    {
+                                                        <img src="~/images/product/@orderItem.Image" alt="product" class="img-fluid img-thumbnail">
+                                                    }
+                                                    
                                                 </div>
                                             </td>
-                                            <td><span class="badge badge-secondary">Cash On Delivery</span></td>
-                                            <td>Paypal</td>
-                                            <td><span class="badge badge-success">Delivered</span></td>
-                                            <td>Dec 08,2020</td>
-                                            <td>$320.00</td>
+
+                                            <td>@item.Time.ToString("MMM dd,yyyy").ToUpper()</td>
+                                            <td>@item.TotalCount</td>
+                                            <td>&#8380;@item.Amount</td>
+                                            @if(item.Status is null)
+                                            {
+                                                 <td><span class="badge badge-warning">Processing</span></td>
+                                            }
+                                            @if(item.Status is true)
+                                            {
+                                                <td><span class="badge badge-success">Successed</span></td>
+                                            }
+                                            @if(item.Status is false)
+                                            {
+                                                <td><span class="badge badge-dark">Cancelled</span></td>
+                                            }
+
+
                                             <td class="text-right">
-                                                <a class="btn btn-primary" href="orders-details.html" data-toggle="tooltip" title="" data-original-title="View Details"><i class="fas fa-pen"></i></a>
+                                                <a class="btn btn-primary" asp-controller="order" asp-action="details" asp-route-id="@item.Id" data-toggle="tooltip" title="" data-original-title="View Details"><i class="fas fa-pen"></i></a>
                                             </td>
                                         </tr>
                                     }
@@ -70,3 +87,12 @@
         </div>
     </div>
 </div>
+@section Scripts{
+        <script src="~/admin/js/custom.js"></script>
+        <script >
+            $(document).ready(function() {
+                $('#basic-datatables').DataTable({
+                });
+            });
+        </script>
+}

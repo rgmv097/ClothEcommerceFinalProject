@@ -33,8 +33,6 @@ namespace Ecommerce
                 options.User.RequireUniqueEmail = true;
             }).AddEntityFrameworkStores<ClothDbContext>().AddDefaultTokenProviders();
 
-            //builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
-            //builder.Services.AddTransient<IMailService, MailManager>();
 
             builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
             builder.Services.AddTransient<IMailService, MailManager>();
@@ -47,6 +45,7 @@ namespace Ecommerce
             Constants.CategoryIconPath= Path.Combine(Constants.RootPath, "images", "icon");
             Constants.ProductImages = Path.Combine(Constants.RootPath, "images", "product");
             Constants.UserImage = Path.Combine(Constants.RootPath, "images", "user");
+            Constants.LogoPath = Path.Combine(Constants.RootPath, "images", "logo");
 
             var app = builder.Build();
 

@@ -1,0 +1,51 @@
+﻿@model List<Blog>
+<section class="pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 ">
+                <div class="heading-part mb-30">
+                    <h2 class="main_title heading"><span>Latest News</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="blog" class="owl-carousel">
+                @foreach (var item in Model)
+                {
+                    <div class="item mb-md-30">
+                        <div class="blog-item">
+                            <div class="">
+                                <div class="blog-media">
+                                    <img src="~/images/blog/@item.ImageUrl" alt="Stylexpo">
+                                    <div class="blog-effect"></div>
+                                    <a asp-controller="blog" asp-action="details" asp-route-id="@item.Id" title="Click For Read More" class="read">&nbsp;</a>
+                                </div>
+                            </div>
+                            <div class="mt-20">
+                                <div class="blog-detail">
+                                    <div class="post-date">@item.Date </div>
+                                    <div class="blog-title"><a asp-controller="blog" asp-action="details" asp-route-id="@item.Id">@item.Title</a></div>
+                                    <p>@item.Description</p>
+                                    <hr>
+                                    <div class="post-info mt-2">
+                                        <ul>
+                                            <li><span>By</span><a href="#"> @item.Author</a></li>
+                                            <li>
+                                                <a asp-controller="blog" asp-action="details" asp-route-id="@item.Id">
+                                                    Read more
+                                                    <i class="fa fa-angle-double-right"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                
+               
+            </div>
+        </div>
+    </div>
+</section>

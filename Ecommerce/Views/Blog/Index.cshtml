@@ -1,0 +1,114 @@
+﻿@model List<Blog>
+<div class="banner inner-banner1 ">
+    <div class="container">
+        <section class="banner-detail center-xs">
+            <h1 class="banner-title">Blog</h1>
+            <div class="bread-crumb right-side float-none-xs">
+                <ul>
+                    <li><a href="index-2.html">Home</a>/</li>
+                    <li><span>Blog</span></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>
+<!-- Bread Crumb END -->
+<!-- CONTAIN START -->
+<section class="ptb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-10 col-lg-9 col-lgmd-80per">
+                <div class="blog-listing">
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-xl-6 col-12">
+                                <div class="blog-item">
+                                    <div class="blog-media mb-30">
+                                        <img style="width:450px;height:450px;" src="~/images/blog/@item.ImageUrl" alt="Blog">
+                                        <div class="blog-effect"></div>
+                                        <a asp-controller="blog" asp-action="details" asp-route-id="@item.Id" title="Click For Read More" class="read">&nbsp;</a>
+                                    </div>
+                                    <div class="blog-detail">
+                                        <div class="post-date">@item.Date</div>
+                                        <div class="blog-title"><a asp-controller="blog" asp-action="details" asp-route-id="@item.Id">@item.Title</a></div>
+                                        <p>@Html.Raw(item.Description)</p>
+                                        <hr>
+                                        <div class="post-info mt-2">
+                                            <ul>
+                                                <li><span>By</span> @item.Author</li>
+                                                <li>
+                                                    <a asp-controller="blog" asp-action="details" asp-route-id="@item.Id">
+                                                        Read more
+                                                        <i class="fa fa-angle-double-right"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                       
+                       
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="pagination-bar">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-3 col-lgmd-20per">
+                <div class="sidebar-block">
+                    <div class="sidebar-box listing-box mb-40">
+                        <span class="opener plus"></span>
+                        <div class="sidebar-title">
+                            <h3><span>Categories</span></h3>
+                        </div>
+                        @await Component.InvokeAsync("CategoriesSideBar")
+                    </div>
+                    <div class="sidebar-box sidebar-item sidebar-item-wide">
+                        <span class="opener plus"></span>
+                        <div class="sidebar-title">
+                            <h3><span>Recent Post</span></h3>
+                        </div>
+                        <div class="sidebar-contant">
+                            <ul>
+                                <li>
+                                    <div class="pro-media"> <a href="#"><img alt="T-shirt" src="images/blog/blog_img1_sm.jpg"></a> </div>
+                                    <div class="pro-detail-info">
+                                        <a href="#">Black African Print</a>
+                                        <div class="post-info">jul 11, 2017</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="pro-media"> <a href="#"><img alt="T-shirt" src="images/blog/blog_img2_sm.jpg"></a> </div>
+                                    <div class="pro-detail-info">
+                                        <a href="#">Black African Print</a>
+                                        <div class="post-info">jul 11, 2017</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="pro-media"> <a href="#"><img alt="T-shirt" src="images/blog/blog_img3_sm.jpg"></a> </div>
+                                    <div class="pro-detail-info">
+                                        <a href="#">Black African Print</a>
+                                        <div class="post-info">jul 11, 2017</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

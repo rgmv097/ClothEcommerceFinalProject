@@ -36,6 +36,7 @@ namespace Ecommerce.Controllers
                     .Include(x => x.WishListProducts)
                     .ThenInclude(x => x.Product)
                     .FirstOrDefaultAsync();
+
                 if (wishList is not null)
                 {
 

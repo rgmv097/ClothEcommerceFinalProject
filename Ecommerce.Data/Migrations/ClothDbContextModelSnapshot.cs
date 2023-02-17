@@ -143,6 +143,40 @@ namespace Ecommerce.Data.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("Ecommerce.Core.Entities.ContactMessage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProfileImage")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subject")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ContactMessages");
+                });
+
             modelBuilder.Entity("Ecommerce.Core.Entities.Order", b =>
                 {
                     b.Property<int>("Id")
@@ -157,13 +191,18 @@ namespace Ecommerce.Data.Migrations
                     b.Property<bool>("IsStatus")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("Published")
+                    b.Property<bool?>("Status")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
+                    b.Property<string>("UserEmail")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -199,9 +238,6 @@ namespace Ecommerce.Data.Migrations
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
-                    b.Property<bool>("Published")
-                        .HasColumnType("bit");
-
                     b.Property<int>("Size")
                         .HasColumnType("int");
 
@@ -236,6 +272,9 @@ namespace Ecommerce.Data.Migrations
 
                     b.Property<decimal?>("Discount")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<bool>("IsLike")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsStatus")
                         .HasColumnType("bit");
@@ -343,6 +382,42 @@ namespace Ecommerce.Data.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductOptions");
+                });
+
+            modelBuilder.Entity("Ecommerce.Core.Entities.Settings", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("LogoUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Settings");
                 });
 
             modelBuilder.Entity("Ecommerce.Core.Entities.Slider", b =>

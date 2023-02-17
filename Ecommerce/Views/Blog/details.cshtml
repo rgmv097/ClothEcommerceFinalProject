@@ -1,0 +1,80 @@
+﻿ @model Blog
+<div class="banner inner-banner1 ">
+    <div class="container">
+      <section class="banner-detail center-xs">
+        <h1 class="banner-title">Single-blog</h1>
+        <div class="bread-crumb right-side float-none-xs">
+          <ul>
+            <li><a href="index-2.html">Home</a>/</li>
+            <li><a href="blog.html">Blog</a>/</li>
+            <li><span>Single-blog</span></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- Bread Crumb END -->
+
+  <!-- CONTAIN START -->
+  <section class="ptb-70">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9">
+          <div class="row">
+            <div class="col-12 mb-60">
+              <div class="blog-media mb-30"> 
+                <img src="~/images/blog/@Model.ImageUrl" alt="blog"> 
+              </div>
+              <div class="blog-detail ">
+                <div class="post-info">
+                  <ul>
+                    <li><div class="post-date">@Model.Date</div></li>
+                    <li><span>By</span><a href="#"> @Model.Author</a></li>
+                  </ul>
+                </div>
+                <h3>@Model.Title</h3>
+                <p>@Html.Raw(Model.Description)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="sidebar-block">
+            <div class="sidebar-box mb-40">
+              <form>
+                <div class="search-box">
+                  <input type="text" placeholder="Search entire store here..." class="input-text">
+                  <button class="search-btn"></button>
+                </div>
+              </form>
+            </div>
+            <div class="sidebar-box listing-box mb-40"> <span class="opener plus"></span>
+              <div class="sidebar-title">
+                <h3><span>Categories</span></h3>
+              </div>
+                        @await Component.InvokeAsync("CategoriesSideBar")
+            </div>
+            <div class="sidebar-box mb-40"> <span class="opener plus"></span>
+              <div class="sidebar-title">
+                <h3><span>Tags</span></h3>
+              </div>
+              <div class="sidebar-contant">
+                <ul class="tagcloud">
+                  <li><a href="#">Orange</a></li>
+                  <li><a href="#">Neutral</a></li>
+                  <li><a href="#">Print</a></li>
+                  <li><a href="#">Tan</a></li>
+                  <li><a href="#">Purple</a></li>
+                  <li><a href="#">Yellow</a></li>
+                  <li><a href="#">White</a></li>
+                  <li><a href="#">Metallic</a></li>
+                  <li><a href="#">Red</a></li>
+                </ul>
+              </div>
+            </div>
+                    @await Component.InvokeAsync("RecentPost")
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

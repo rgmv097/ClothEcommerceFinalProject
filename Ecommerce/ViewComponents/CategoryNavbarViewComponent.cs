@@ -16,9 +16,12 @@ namespace Ecommerce.ViewComponents
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var categories= await _clothDbContext.Categories
-                .Where(p=>p.IsStatus && p.isMain)
+                .Where(c=>c.isMain && c.IsStatus)
                 .Include(c=>c.Children)
+                .Include(p=>p.ProductCategories)
+                .ThenInclude(p=>p.Product)
                 .ToListAsync();
+                
 
             return View(categories);
         }

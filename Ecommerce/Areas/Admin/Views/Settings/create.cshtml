@@ -1,0 +1,112 @@
+﻿@model SettingsCreateViewModel
+
+<div class="content">
+    <div class="panel-header bg-white shadow-sm">
+        <div class="page-inner  py-3 mb-5">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                <div class="">
+                    <div class="header d-sm-flex align-items-center  text-center">
+                        <h1 class="page-header banner-title">Settings</h1>
+                        <ul class="breadcrumb justify-content-sm-start justify-content-center">
+                            <li><a asp-controller="dashboard" asp-action="index"><i class="icon-home"></i></a></li>
+                            <li><a href="#">Settings</a></li>
+                            <li><a href="#">Create Settings</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+
+                    <div class="card-body">
+                        <form class="main-form full method="post" asp-action="create" enctype="multipart/form-data">
+                            <div class="card-header">
+                                <div class="card-head-row justify-content-between">
+                                    <div class="card-title"><i class="fas fa-pen"></i> Create Settings</div>
+                                    <div class="add-btn text">
+                                        <button type="submit" class="btn btn-primary" data-toggle="tooltip" title="" data-original-title="Save"><i class="fas fa-save"></i></button>
+                                        <a class="btn btn-primary" href="#" data-toggle="tooltip" title="" data-original-title="Cancel"><i class="fas fa-times"></i></a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="col-12">
+                                    <div class="input-box form-group required">
+                                        <div class="row">
+                                            <label asp-for="Description" class="col-md-3 control-label">App Description</label>
+                                            <div class="col-md-9">
+                                                <input asp-for="Description" class="form-control" required placeholder="App Description">
+                                                <span asp-validation-for="Description" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="input-box form-group">
+                                        <div class="row">
+                                            <label asp-for="Address" class="col-md-3 control-label">Address</label>
+                                            <div class="col-md-9">
+                                                <input asp-for="Address" class="form-control" placeholder="Address"></input>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="input-box form-group">
+                                        <div class="row">
+                                            <label asp-for="Email" class="col-md-3 control-label">Email</label>
+                                            <div class="col-md-9">
+                                                <input asp-for="Email" class="form-control" required placeholder="Email">
+                                                <span asp-validation-for="Email" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="input-box form-group">
+                                        <div class="row">
+                                            <label asp-for="Phone" class="col-md-3 control-label">Phone Number</label>
+                                            <div class="col-md-9">
+                                                <input asp-for="Phone" class="form-control" required placeholder="Phone">
+                                                <span asp-validation-for="Phone" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="input-box form-group required">
+                                        <div class="row">
+                                            <label asp-for="Logo" class="col-md-3 control-label"> Logo</label>
+                                            <div class="col-md-9">
+                                                <input asp-for="Logo" class="form-control" required accept="image/*">
+                                                <span asp-validation-for="Logo" class="text-danger font-weight-bold"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <partial name="_CKEScriptsPartial" />
+
+	}
+

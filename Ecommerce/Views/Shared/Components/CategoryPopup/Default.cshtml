@@ -15,7 +15,7 @@
                                         <ul class="sub-menu-level2 ">
                                             @foreach (var sub in item.Children)
                                             {
-                                                <li class="level3"><a href="shop.html"><span>■</span>@sub.Name</a></li>
+                                                <li class="level3"><a asp-controller="shop" asp-action="ShopCategory" asp-route-id="@item.Id"><span>■</span>@sub.Name</a></li>
                                             }
                                            
                                            

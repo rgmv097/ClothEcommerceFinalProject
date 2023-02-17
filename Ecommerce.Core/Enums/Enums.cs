@@ -7,7 +7,7 @@
         M,
         L,
         XL,
-        XXL
+        XXL,
     }
 
     public enum ProductColors
@@ -16,6 +16,7 @@
         Black,
         White,
         Green,
-        Yellow
+        Yellow,
+        Gray,
     }
 }

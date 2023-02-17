@@ -1896,6 +1896,7 @@ _______________________________________________________*/
 	background-position: -9px -417px;
 }
 
+
 .detail-inner-left ul li.pro-compare-icon a {
    background-position: -9px -456px;
 }
@@ -2334,15 +2335,26 @@ _______________________________________________________*/
 	-o-transition: all 0.4s ease 0s;
     width: 37px;
 }
+
+
 .bottom-detail ul li:hover span  {
 	background-color: #ff3030;
 	border: 1px solid #ff3030;
+}
+
+.bottom-detail ul li.pro-wishlist-icon span:hover,
+.bottom-detail ul li.pro-wishlist-icon.active span {
+	background-color: #ff3030;
 }
 .bottom-detail ul li.pro-cart-icon span { background-position: -9px -312px; }
 .bottom-detail ul li.pro-cart-icon:hover span { background-position: -9px -347px; }
 
 .bottom-detail ul li.pro-wishlist-icon span { background-position: -10px -381px; }
-.bottom-detail ul li.pro-wishlist-icon:hover span { background-position: -10px -418px; }
+
+.bottom-detail ul li.pro-wishlist-icon.active span,
+.bottom-detail ul li.pro-wishlist-icon:hover span {
+	background-position: -10px -418px;
+}
 
 .bottom-detail ul li.pro-compare-icon span { background-position: -10px -457px; }
 .bottom-detail ul li.pro-compare-icon:hover span { background-position: -10px -491px; }

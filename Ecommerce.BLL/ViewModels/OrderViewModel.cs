@@ -1,4 +1,5 @@
-﻿using Ecommerce.Core.Enums;
+﻿using Ecommerce.Core.Entities;
+using Ecommerce.Core.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,9 @@ namespace Ecommerce.BLL.ViewModels
         public decimal Amount { get; set; }
         public DateTime Time { get; set; }
         public string Name { get; set; }
-        public bool Status { get; set; }
+        public bool? Status { get; set; }
+        public List<OrderItem> Items { get; set; }
+        public int TotalCount { get; set; }
+
     }
 }

@@ -1,0 +1,181 @@
+﻿@model List<ProductCategory>
+<div class="banner inner-banner1 ">
+    <div class="container">
+        <section class="banner-detail center-xs">
+            <h1 class="banner-title">Shop Items</h1>
+            <div class="bread-crumb right-side float-none-xs">
+                <ul>
+                    <li><a asp-controller="home" asp-action="index">Home</a>/</li>
+                    <li><span>Shop</span></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</div>
+<!-- Bread Crumb END -->
+<!-- CONTAIN START -->
+<section class="ptb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-2 col-lg-3 mb-sm-30 col-lgmd-20per">
+                <div class="sidebar-block">
+                    <div class="sidebar-box listing-box mb-40">
+                        <span class="opener plus"></span>
+                        <div class="sidebar-title">
+                            <h3><span>Categories</span></h3>
+                        </div>
+                        @await Component.InvokeAsync("CategoriesSideBar")
+                    </div>
+                    <div class="sidebar-box mb-40">
+                        <span class="opener plus"></span>
+                        <div class="sidebar-title">
+                            <h3><span>Shop by</span></h3>
+                        </div>
+                        <div class="sidebar-contant">
+                            <div class="size mb-20">
+                                <div class="inner-title">Size</div>
+                                <ul>
+                                    <li><a href="#">S (10)</a></li>
+                                    <li><a href="#">M (05)</a></li>
+                                    <li><a href="#">L (10)</a></li>
+                                    <li><a href="#">XL (08)</a></li>
+                                    <li><a href="#">XXL (05)</a></li>
+                                </ul>
+                            </div>
+                            <div class="mb-20">
+                                <div class="inner-title">Color</div>
+                                <ul>
+                                    <li><a href="#">Black <span>(0)</span></a></li>
+                                    <li><a href="#">Blue <span>(05)</span></a></li>
+                                    <li><a href="#">Brown <span>(10)</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    @await Component.InvokeAsync("BestSeller")
+                </div>
+            </div>
+            <div class="col-xl-10 col-lg-9 col-lgmd-80per">
+                <div class="shorting mb-30">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="view">
+                                <div class="list-types grid active ">
+                                    <a asp-controller="shop">
+                                        <div class="grid-icon list-types-icon"></div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="short-by float-right-sm">
+                                <span>Sort By :</span>
+                                <div class="select-item select-dropdown">
+                                    <fieldset>
+                                        <select name="speed" id="sort-price" class="option-drop">
+                                            <option value="" selected="selected">Name (A to Z)</option>
+                                            <option value="">Name(Z - A)</option>
+                                            <option value="">price(low&gt;high)</option>
+                                            <option value="">price(high &gt; low)</option>
+                                            <option value="">rating(highest)</option>
+                                            <option value="">rating(lowest)</option>
+                                        </select>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="show-item right-side float-left-sm">
+                                <span>Show :</span>
+                                <div class="select-item select-dropdown">
+                                    <fieldset>
+                                        <select name="speed" id="show-item" class="option-drop">
+                                            <option value="" selected="selected">24</option>
+                                            <option value="">12</option>
+                                            <option value="">6</option>
+                                        </select>
+                                    </fieldset>
+                                </div>
+                                <span>Per Page</span>
+                                <div class="compare float-right-sm"> <a href="#" class="btn btn-color">Compare (0)</a> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-listing">
+                    <div class="inner-listing">
+                        <div class="row">
+                            @foreach (var product in Model)
+                            {                             
+                                <div class="col-md-4 col-6 item-width mb-30">
+                                    <div class="product-item">
+                                        <div class="product-image">
+                                            <a asp-controller="shop" asp-action="details" asp-route-id="@product.Product.Id"> <img style="width:290px;height:375px" src="~/images/product/@product.Product.MainImageUrl" alt="Product Image"> </a>
+                                            <div class="product-detail-inner">
+                                                <div class="detail-inner-left align-center">
+                                                    <ul>
+                                                        <li class="pro-wishlist-icon"><a href="#" title="Wishlist"></a></li>
+                                                        <li class="pro-compare-icon"><a href="#" title="Compare"></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @if (product.Product.Discount > 0)
+                                        {
+                                            <div class="product-item-details">
+                                                <div class="product-item-name"> <a asp-controller="shop" asp-action="details" asp-route-id="@product.Id">@product.Product.Name</a> </div>
+                                                <div class="price-box"> <span class="price">$@product.Product.Discount</span> <span style="text-decoration:line-through" class="price old-price">$@product.Product.Price</span> </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="product-item-details">
+                                                <div class="product-item-name"> <a asp-controller="shop" asp-action="details" asp-route-id="@product.Id">@product.Product.Name</a> </div>
+                                                <div class="price-box"> <span class="price">$@product.Product.Price</span></div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            }
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                @await Html.PartialAsync("_PaginationPartialView")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+    <script>
+        $(document).on('click', '.pro-wishlist-icon a', function (e) {
+            e.preventDefault();
+            var productId = $(this).data('id');
+            var $this = $(this);
+            var actionUrl = $(this).parent().hasClass("active")
+                ? 'DeleteProductFromWishList'
+                : 'AddProductToWishList';
+
+            $.ajax({
+                type: "POST",
+                url: `/WishList/${actionUrl}`,
+                data: { productId: productId },
+                success: function () {
+                    let allIcons = $(`.pro-wishlist-icon > a[data-id=${productId}]`);
+                    let actionBtn = $this.parent();
+
+                    if (actionBtn.hasClass("active")) {
+                        actionBtn.removeClass('active');
+                        allIcons.each((index, el) => $(el).parent().removeClass('active'))
+                        return;
+                    }
+                    actionBtn.addClass('active');
+                    allIcons.each((index, el) => $(el).parent().addClass('active'))
+                },
+            });
+        })
+    </script>
+}

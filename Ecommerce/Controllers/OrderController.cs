@@ -43,6 +43,8 @@ namespace Ecommerce.Controllers
 
             var order = new Order
             {
+                UserName=user.UserName,
+                UserEmail=user.Email,
                 UserId = user.Id,
                 CreateTime = DateTime.Now,
                 OrderItems = new List<OrderItem>()
@@ -57,6 +59,7 @@ namespace Ecommerce.Controllers
                     Color= product.Color,
                     Size= product.Size,
                     Count = product.Count,
+                    Image=product.Product.MainImageUrl
                 });
             }
 
@@ -65,6 +68,8 @@ namespace Ecommerce.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+
+
 
 
     }

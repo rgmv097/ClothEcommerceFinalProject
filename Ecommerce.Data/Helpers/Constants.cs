@@ -14,6 +14,7 @@ namespace Ecommerce.BLL.Helpers
         public static string CategoryIconPath;
         public static string ProductImages;
         public static string UserImage;
+        public static string LogoPath;
 
 
         public const string AdminRole = "Admin";

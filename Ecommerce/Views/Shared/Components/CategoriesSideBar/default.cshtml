@@ -3,7 +3,7 @@
     <ul>
         @foreach (var item in Model)
         {
-            <li><a href="#">@item.Name<span> (@item.ProductCategories.Count)</span></a></li>
+            <li><a asp-controller="shop" asp-action="CategoryShop" asp-route-id="@item.Id">@item.Name<span> (@item.ProductCategories.Count)</span></a></li>
 
         }
     </ul>

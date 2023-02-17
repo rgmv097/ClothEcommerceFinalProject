@@ -22,6 +22,8 @@ namespace Ecommerce.Core.Entities
         public List<ProductCategory>? ProductCategories { get; set; }
         public ICollection<WishListProduct> WishListProducts { get; set; }
 
+        public bool IsLike { get; set; }
+
 
     }
 }

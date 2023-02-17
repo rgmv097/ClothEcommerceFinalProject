@@ -44,6 +44,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Areas/Admin/Views/Order/details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJcZGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Areas/Admin/Views/Order/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -58,6 +62,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Areas/Admin/Views/Product/update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFx1cGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Areas/Admin/Views/Settings/create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2V0dGluZ3NcY3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
@@ -96,6 +104,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Views/About/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Views/Account/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -128,12 +140,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFza2V0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Views/Blog/details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xkZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Views/Blog/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Views/Contact/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Views/ErrorPages/Error404.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JQYWdlc1xFcnJvcjQwNC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Views/Shared/Components/BasketHome/default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQmFza2V0SG9tZVxkZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Views/Shared/Components/BestSeller/default.cshtml]
@@ -152,12 +180,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2F0ZWdvcnlQb3B1cFxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Views/Shared/Components/ContactMessage/default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ29udGFjdE1lc3NhZ2VcZGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Views/Shared/Components/LastestNews/default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTGFzdGVzdE5ld3NcZGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Views/Shared/Components/ProductRelated/default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUHJvZHVjdFJlbGF0ZWRcZGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Views/Shared/Components/RecentPost/default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcUmVjZW50UG9zdFxkZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Views/Shared/Components/Settings/default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2V0dGluZ3NcZGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Views/Shared/_PaginationPartialView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYWdpbmF0aW9uUGFydGlhbFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Views/Shared/_ProductSearchPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Qcm9kdWN0U2VhcmNoUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Views/Shop/CategoryShop.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxDYXRlZ29yeVNob3AuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/rcing/OneDrive/İş masası/EcommerceFinalProject/Ecommerce/Views/Shop/Details.cshtml]

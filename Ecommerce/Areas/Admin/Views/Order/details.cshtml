@@ -1,0 +1,128 @@
+﻿@model Order
+<div class="content">
+    <div class="panel-header bg-white shadow-sm">
+        <div class="page-inner  py-3 mb-5">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                <div class="">
+                    <div class="header d-sm-flex align-items-center  text-center">
+                        <h1 class="page-header banner-title">Transactions</h1>
+                        <ul class="breadcrumb justify-content-sm-start justify-content-center">
+                            <li><a href="../index-2.html"><i class="icon-home"></i></a></li>
+                            <li><a href="#">Sales</a></li>
+                            <li><a href="#">Transactions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-inner transaction-details">
+        <div class="row">
+            <div class="col-xl-4 col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"><i class="fas fa-user"></i> Customer Details </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="display table">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 1%;">
+                                            <button data-toggle="tooltip" title="" class="btn btn-primary btn-xs" data-original-title="Customer">
+                                                <i class="fas fa-user"></i>
+                                            </button>
+                                        </td>
+                                        <td><a href="#">@Model.UserName.ToUpper()</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button data-toggle="tooltip" title="" class="btn btn-primary btn-xs" data-original-title="E-mail">
+                                                <i class="fas fa-envelope"></i>
+                                            </button>
+                                        </td>
+                                        <td><a href="#">@Model.UserEmail</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"><i class="fas fa-info-circle"></i> Order ID (#@Model.Id)</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive order-details">
+                            <table class="display table table-bordered mt-3">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Name</th>
+                                        <th>Color</th>
+                                        <th>Size</th>
+                                        <th class="text-right">Quantity</th>
+                                        <th class="text-right">Unit Price</th>
+                                        <th class="text-right">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        decimal Total = 0;
+                                    }
+                                    @foreach (var item in Model.OrderItems)
+                                    {
+                                        Total += item.Count * item.Product.Price;
+                                        <tr>
+                                            <td> <img src="~/images/product/@item.Image" alt="product" class="img-fluid img-thumbnail"></td>
+                                            <td>@item.Product.Name</td>
+                                            <td>@item.Color</td>
+                                            <td>@item.Size</td>
+                                            <td class="text-right">@item.Count</td>
+                                            <td class="text-right">&#8380;@item.Product.Price</td>
+                                            <td class="text-right">&#8380;@(item.Count * item.Product.Price)</td>
+                                        </tr>
+                                    }
+                                    <tr>
+                                        <td colspan="6" class="text-right">Total</td>
+                                        <td class="text-right">&#8380;@Total</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"><i class="fas fa-info-circle"></i> Order Status</div>
+
+                    </div>
+                    <div class="col-6">
+                        <form class="main-form full method="post" asp-action="OrderStatus">
+                            <div class="input-box form-group">
+                                <input type="hidden" asp-for="@Model.Id" />
+                                <div class="row">
+                                    <label for="input-order-status" class="col-md-3 control-label">Order Status</label>
+                                    <div class="col-md-9">
+                                        <select asp-for="Status" class="form-control">
+                                            <option disabled selected="selected">Select Status</option>
+                                            <option value="true">Accept Order</option>
+                                            <option value="false">Cancele Order</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-6 text-right mt-4">
+                                        <button type="submit" class="btn btn-primary btn-round">Add History</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
